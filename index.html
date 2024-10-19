@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChatReal</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <!-- 利用規約画面 -->
+    <div id="termsPage">
+        <h1>利用規約</h1>
+        <p>ここに利用規約を記載します。</p>
+        <label>
+            <input type="checkbox" id="agreeCheckbox"> 利用規約に同意します
+        </label>
+        <button id="agreeButton" disabled>次へ</button>
+    </div>
+
+    <!-- 会員登録画面 -->
+    <div id="registrationPage" style="display:none;">
+        <h1>会員登録</h1>
+        <form id="registrationForm">
+            <label for="name">氏名:</label>
+            <input type="text" id="name" required><br><br>
+
+            <label for="age">年齢:</label>
+            <input type="number" id="age" required><br><br>
+
+            <label for="phone">電話番号:</label>
+            <input type="tel" id="phone" required><br><br>
+
+            <label for="email">メールアドレス:</label>
+            <input type="email" id="email" required><br><br>
+
+            <button type="submit">会員登録</button>
+        </form>
+    </div>
+
+    <!-- ジャンル選択画面 -->
+    <div id="genrePage" style="display:none;">
+        <h1>興味のあるジャンルを選んでください</h1>
+        <form id="genreForm">
+            <label><input type="checkbox" name="genre" value="売買部門"> 売買部門</label><br>
+            <label><input type="checkbox" name="genre" value="交流部門"> 交流部門</label><br>
+            <label><input type="checkbox" name="genre" value="若者の集い部門"> 若者の集い部門</label><br>
+            <label><input type="checkbox" name="genre" value="習い事・趣味部門"> 習い事・趣味部門</label><br>
+            <label><input type="checkbox" name="genre" value="家庭関連部門"> 家庭関連部門</label><br>
+            <label><input type="checkbox" name="genre" value="政治経済部門"> 政治経済部門</label><br>
+            <label><input type="checkbox" name="genre" value="安全安定部門"> 安全安定部門</label><br>
+            <label><input type="checkbox" name="genre" value="LOVESPACE部門"> LOVESPACE部門</label><br>
+            <button type="submit">次へ</button>
+        </form>
+    </div>
+
+
+    <!-- ジャンル一覧画面 -->
+<div id="genreListPage" style="display:none;">
+    <h1>ジャンル一覧</h1>
+    <ul id="genreList">
+        <li><button class="genreButton" data-genre="売買部門">売買部門</button></li>
+        <li><button class="genreButton" data-genre="交流部門">交流部門</button></li>
+        <li><button class="genreButton" data-genre="若者の集い部門">若者の集い部門</button></li>
+        <li><button class="genreButton" data-genre="習い事・趣味部門">習い事・趣味部門</button></li>
+        <li><button class="genreButton" data-genre="家庭関連部門">家庭関連部門</button></li>
+        <li><button class="genreButton" data-genre="政治経済部門">政治経済部門</button></li>
+        <li><button class="genreButton" data-genre="安全安定部門">安全安定部門</button></li>
+        <li><button class="genreButton" data-genre="LOVESPACE部門">LOVESPACE部門</button></li>
+    </ul>
+</div>
+
+<!-- 投稿画面 -->
+<div id="postPage" style="display:none;">
+    <h1 id="postTitle"></h1>
+    <form id="postForm">
+        <textarea id="postContent" placeholder="ここに投稿内容を記載してください" required></textarea><br>
+        <button type="submit">投稿</button>
+    </form>
+    <div id="postHistory">
+        <h2>投稿履歴</h2>
+        <ul id="postList"></ul>
+    </div>
+</div>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+    const agreeCheckbox = document.getElementById('agreeCheckbox');
+    const agreeButton = document.getElementById('agreeButton');
+    const termsPage = document.getElementById('termsPage');
+    const registrationPage = document.getElementById('registrationPage');
+    const genrePage = document.getElementById('genrePage');
+    const genreListPage = document.getElementById('genreListPage');
+    const postPage = document.getElementById('postPage');
+    const postTitle = document.getElementById('postTitle');
+    const postForm = document.getElementById('postForm');
+    const postContent = document.getElementById('postContent');
+    const postList = document.getElementById('postList');
+    let selectedGenre = '';
+
+    // 利用規約に同意チェック
+    agreeCheckbox.addEventListener('change', function() {
+        agreeButton.disabled = !agreeCheckbox.checked;
+    });
+
+    // 利用規約画面から会員登録画面への移動
+    agreeButton.addEventListener('click', function() {
+        termsPage.style.display = 'none';
+        registrationPage.style.display = 'block';
+    });
+
+    // 会員登録フォームの処理
+    registrationForm.addEventListener('submit', function(event) {
+        event.preventDefault(); // フォームの送信を防ぐ
+        registrationPage.style.display = 'none';
+        genrePage.style.display = 'block';
+    });
+
+    // ジャンル選択フォームの処理
+    genreForm.addEventListener('submit', function(event) {
+        event.preventDefault(); // フォームの送信を防ぐ
+        genrePage.style.display = 'none';
+        genreListPage.style.display = 'block';
+    });
+
+    // ジャンル一覧でジャンルを選んだときの処理
+    document.querySelectorAll('.genreButton').forEach(function(button) {
+        button.addEventListener('click', function() {
+            selectedGenre = this.getAttribute('data-genre');
+            genreListPage.style.display = 'none';
+            postPage.style.display = 'block';
+            postTitle.textContent = `${selectedGenre}への投稿`;
+        });
+    });
+
+    // 投稿フォームの処理
+    postForm.addEventListener('submit', function(event) {
+        event.preventDefault(); // フォームの送信を防ぐ
+        const content = postContent.value;
+        if (content) {
+            const li = document.createElement('li');
+            li.textContent = content;
+            postList.appendChild(li);
+            postContent.value = ''; // 投稿後に内容をリセット
+        }
+    });
+});
+
+    </script>
+</body>
+</html>
