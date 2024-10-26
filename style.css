@@ -125,7 +125,8 @@ button:disabled {
     margin-bottom: 20px;
 }
 .login-image {
-    width: 100px;
- height: auto; 
-    margin-bottom: 10px; 
+width: 80%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
 }
