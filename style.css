@@ -90,3 +90,33 @@ button:disabled {
     background-color: #f0f0f0;
     border-radius: 4px;
 }
+.in{
+    display: inline-block;
+    padding: 10px 20px;
+    margin-right: 10px;
+    border: 2px solid #333;
+    border-radius: 5px;
+    text-decoration: none; 
+    color: #333;
+    background-color: #f0f0f0;
+    font-size: 16px; 
+    transition: background-color 0.3s;
+}
+.up {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-right: 10px;
+    border: 2px solid #333;
+    border-radius: 5px;
+    text-decoration: none;
+    color: #333;
+    background-color: #f0f0f0;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+.in {
+    border-color: #007bff;
+}
+.up {
+    border-color: #28a745;
+}
