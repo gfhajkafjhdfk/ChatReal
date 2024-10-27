@@ -141,7 +141,7 @@ button:disabled {
     width: 600px;
     height: auto;
 }
-.genreList{
+#genreList{
     
     di
 display: flex;
@@ -163,7 +163,7 @@ justify-content: center;
     height: 100vh;
 }
 
-#genreForm label {
+#genreList lavel {
     width: 200px;
     text-align: center;
     margin: 5px 0;
