@@ -220,11 +220,9 @@
       background-color: #0056b3;
     }
   </style>
-    <button class="back-button" onclick="goBack()">戻る</button>
-        <script>
-    function goBack() {
-      window.history.back();
-    }
+    <form>
+    <input type="button" onclick="history.back()" value="戻る">
+</form>
   </script>
         <label for="username">ユーザー名:</label>
         <input type="text" id="username" required><br>
