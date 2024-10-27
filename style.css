@@ -141,7 +141,7 @@ button:disabled {
     width: 600px;
     height: auto;
 }
-.ul{
+#ul{
     
     di
 display: flex;
@@ -163,7 +163,7 @@ justify-content: center;
     height: 100vh;
 }
 
-.ul lavel {
+#ul lavel {
     width: 200px;
     text-align: center;
     margin: 5px 0;
