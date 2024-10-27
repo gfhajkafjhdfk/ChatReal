@@ -159,13 +159,13 @@ align-items: center;
     justify
 
     j
-justify-content: center; /* 縦方向に中央揃え */
-    height: 100vh; /* 画面全体の高さを指定 */
+justify-content: center;
+    height: 100vh;
 }
 
 #genreForm label {
-    width: 200px; /* ボタンの幅を調整 */
-    text-align: center; /* ボタン内のテキストを中央揃え */
-    margin: 5px 0; /* ボタン間のスペース */
+    width: 200px;
+    text-align: center;
+    margin: 5px 0;
 }
     
