@@ -284,6 +284,18 @@
             }
         })
 
+        // ジャンル選択の処理
+        document.getElementById('genreForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const selectedGenres = [];
+            document.querySelectorAll('input[name="genre"]:checked').forEach(genre => {
+                selectedGenres.push(genre.value);
+            });
+            console.log('Selected Genres:', selectedGenres);
+            genrePage.style.display = 'none';
+            genreListPage.style.display = 'block';
+        });
+
         // Capture user info and move to genre page
         document.getElementById('registrationForm').addEventListener('submit', function(e) {
             e.preventDefault();
