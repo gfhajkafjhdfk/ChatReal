@@ -194,7 +194,7 @@
 <!-- 投稿画面 -->
 <div id="postPage" style="display:none;">
     <h1 id="postTitle"></h1>
-    <form id="postForm"> 
+    <form id="postForm" action="test.html" method="post" enctype="multipart/form-data"> 
         <style>
     .back-button {
       position: fixed;
@@ -222,6 +222,7 @@
         <input type="text" id="username" required><br>
 
         <textarea id="postContent" placeholder="ここに投稿内容を記載してください（不適切な投稿は控えてください）" required></textarea><br>
+        <input type="file" name="test" id="filebox" accept="video/*">
         <button type="submit">投稿</button>
     </form>
     <!-- 投稿履歴を表示 -->
@@ -230,7 +231,6 @@
         <ul id="postList"></ul>
     </div>
 </div>
-
 
 <script>
     document.addEventListener('DOMContentLoaded', function() {
@@ -245,101 +245,72 @@
         const postForm = document.getElementById('postForm');
         const postContent = document.getElementById('postContent');
         const postList = document.getElementById('postList');
+        const filebox = document.getElementById('filebox');
 
-
-        // Enable "Agree" button when checkbox is checked
         agreeCheckbox.addEventListener('change', function() {
             agreeButton.disabled = !agreeCheckbox.checked;
         });
 
-
-        // Navigate to registration page
         agreeButton.addEventListener('click', function() {
             termsPage.style.display = 'none';
             registrationPage.style.display = 'block';
         });
 
-
-        // Capture user info and move to genre page
         document.getElementById('registrationForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            const name = document.getElementById('name').value;
-            const age = document.getElementById('age').value;
-            const phone = document.getElementById('phone').value;
-            const email = document.getElementById('email').value;
-            const password = document.getElementById('password').value;
-
-
-            // Store the user data (you can later store in localStorage if needed)
-            const userData = { name, age, phone, email, password };
-            console.log('User Data:', userData);
-
-
             registrationPage.style.display = 'none';
             genrePage.style.display = 'block';
         });
 
-
-        // Capture genre selection and move to genre list page
         document.getElementById('genreForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            const selectedGenres = [];
-            document.querySelectorAll('input[name="genre"]:checked').forEach(genre => {
-                selectedGenres.push(genre.value);
-            });
-            console.log('Selected Genres:', selectedGenres);
-
-
             genrePage.style.display = 'none';
             genreListPage.style.display = 'block';
         });
 
-
-        // Display the relevant genre page when a genre button is clicked
         document.querySelectorAll('.genreButton').forEach(button => {
             button.addEventListener('click', function() {
                 const genre = this.dataset.genre;
                 postTitle.textContent = `${genre} 部門の投稿`;
                 genreListPage.style.display = 'none';
                 postPage.style.display = 'block';
-                loadPosts(genre);  // Load the stored posts for the selected genre
+                loadPosts(genre);
             });
         });
 
-
-        // Handle post submission and store in localStorage
         postForm.addEventListener('submit', function(e) {
             e.preventDefault();
             const username = document.getElementById('username').value;
             const content = postContent.value;
+            const file = filebox.files[0];
             const genre = postTitle.textContent.split(' ')[0];
-
-
-            // Save post in localStorage
             const post = { username, content, timestamp: new Date().toLocaleString() };
+
             let posts = JSON.parse(localStorage.getItem(genre)) || [];
             posts.push(post);
             localStorage.setItem(genre, JSON.stringify(posts));
 
-
-            // Update the post list
-            displayPost(post);
+            displayPost(post, file);
             postForm.reset();
         });
 
-
-        // Load posts from localStorage for the selected genre
         function loadPosts(genre) {
             postList.innerHTML = '';
             const posts = JSON.parse(localStorage.getItem(genre)) || [];
             posts.forEach(post => displayPost(post));
         }
 
-
-        // Display a single post
-        function displayPost(post) {
+        function displayPost(post, file = null) {
             const li = document.createElement('li');
             li.innerHTML = `<strong>${post.username}</strong> (${post.timestamp})<br>${post.content}`;
+
+            if (file) {
+                const video = document.createElement('video');
+                video.controls = true;
+                video.src = URL.createObjectURL(file);
+                li.appendChild(video);
+            }
+
             postList.appendChild(li);
         }
     });
