@@ -232,14 +232,9 @@
         const postContent = document.getElementById('postContent');
         const postList = document.getElementById('postList');
         const filebox = document.getElementById('filebox');
+        const loginForm = document.getElementById('loginform'); // 追加
         
-
-        // Enable "Agree" button when checkbox is checked
-        agreeCheckbox.addEventListener('change', function() {
-            agreeButton.disabled = !agreeCheckbox.checked;
-        });
-
-        // 会員登録フォームの送信　変えたところ始まり
+　　　　　// 会員登録フォームの送信　変えたところ始まり
         document.getElementById('registrationForm').addEventListener('submit', function(e) {
             e.preventDefault();
             const name = document.getElementById('name').value;
@@ -278,6 +273,12 @@
             }
         });　　　//変えたところ　終わり
 
+        
+        // Enable "Agree" button when checkbox is checked
+        agreeCheckbox.addEventListener('change', function() {
+            agreeButton.disabled = !agreeCheckbox.checked;
+        });
+       
         // Navigate to registration page
         agreeButton.addEventListener('click', function() {
             termsPage.style.display = 'none';
