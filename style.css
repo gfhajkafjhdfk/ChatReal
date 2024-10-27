@@ -19,7 +19,7 @@ body::before {
 }
 
 h1 {
-    color: #944;
+    color: #b1c;
     text-align: center;
     margin-top: 20px;
 }
@@ -141,6 +141,31 @@ button:disabled {
     width: 600px;
     height: auto;
 }
-.genreList {
-    margin: auto
+.genreList{
+    
+    di
+display: flex;
+    
+    fl
+flex-direction: column;
+    
+    align-item
+
+    ali
+align-items: center;
+    
+    justify-cont
+
+    justify
+
+    j
+justify-content: center; /* 縦方向に中央揃え */
+    height: 100vh; /* 画面全体の高さを指定 */
 }
+
+#genreForm label {
+    width: 200px; /* ボタンの幅を調整 */
+    text-align: center; /* ボタン内のテキストを中央揃え */
+    margin: 5px 0; /* ボタン間のスペース */
+}
+    
