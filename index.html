@@ -244,6 +244,45 @@
             registrationPage.style.display = 'block';
         });
 
+        // 会員登録フォームの送信
+        document.getElementById('registrationForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            const age = document.getElementById('age').value;
+            const phone = document.getElementById('phone').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            // ユーザーデータをオブジェクトとして保存
+            const userData = { name, age, phone, email, password };
+
+            // ローカルストレージにユーザーデータを保存
+            localStorage.setItem('userData', JSON.stringify(userData));
+            console.log('User Data saved:', userData);
+
+            registrationPage.style.display = 'none';
+            genrePage.style.display = 'block';
+        });
+
+        // ログインフォームの送信
+        loginForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const loginEmail = document.getElementById('loginemail').value;
+            const loginPassword = document.getElementById('loginpassword').value;
+
+            // ローカルストレージからユーザーデータを取得
+            const storedUserData = JSON.parse(localStorage.getItem('userData'));
+
+            // ログイン情報を確認
+            if (storedUserData && storedUserData.email === loginEmail && storedUserData.password === loginPassword) {
+                console.log('ログイン成功:', storedUserData);
+                termsPage.style.display = 'none';
+                genrePage.style.display = 'block';
+            } else {
+                alert('メールアドレスまたはパスワードが間違っています。');
+            }
+        })
+
         // Capture user info and move to genre page
         document.getElementById('registrationForm').addEventListener('submit', function(e) {
             e.preventDefault();
