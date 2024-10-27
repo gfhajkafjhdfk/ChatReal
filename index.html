@@ -255,75 +255,110 @@
         const postList = document.getElementById('postList');
         const filebox = document.getElementById('filebox');
 
+        // Enable "Agree" button when checkbox is checked
         agreeCheckbox.addEventListener('change', function() {
             agreeButton.disabled = !agreeCheckbox.checked;
         });
 
+        // Navigate to registration page
         agreeButton.addEventListener('click', function() {
             termsPage.style.display = 'none';
             registrationPage.style.display = 'block';
         });
 
+        // Capture user info and move to genre page
         document.getElementById('registrationForm').addEventListener('submit', function(e) {
             e.preventDefault();
             registrationPage.style.display = 'none';
             genrePage.style.display = 'block';
         });
 
+        // Capture genre selection and move to genre list page
         document.getElementById('genreForm').addEventListener('submit', function(e) {
             e.preventDefault();
             genrePage.style.display = 'none';
             genreListPage.style.display = 'block';
         });
 
+        // Display the relevant genre page when a genre button is clicked
         document.querySelectorAll('.genreButton').forEach(button => {
             button.addEventListener('click', function() {
                 const genre = this.dataset.genre;
                 postTitle.textContent = `${genre} 部門の投稿`;
                 genreListPage.style.display = 'none';
                 postPage.style.display = 'block';
-                loadPosts(genre);
+                loadPosts(genre);  // Load posts from localStorage for the selected genre
             });
         });
 
+        // Function to handle post submissions
         postForm.addEventListener('submit', function(e) {
             e.preventDefault();
             const username = document.getElementById('username').value;
             const content = postContent.value;
-            const file = filebox.files[0];
             const genre = postTitle.textContent.split(' ')[0];
-            const post = { username, content, timestamp: new Date().toLocaleString() };
+            const timestamp = new Date().toLocaleString();
+            const file = filebox.files[0]; // Correctly reference the file input
 
-            let posts = JSON.parse(localStorage.getItem(genre)) || [];
-            posts.push(post);
-            localStorage.setItem(genre, JSON.stringify(posts));
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const base64Data = e.target.result;
+                    const post = { username, content, media: base64Data, timestamp };
 
-            displayPost(post, file);
-            postForm.reset();
+                    // Save to localStorage
+                    let posts = JSON.parse(localStorage.getItem(genre)) || [];
+                    posts.push(post);
+                    localStorage.setItem(genre, JSON.stringify(posts));
+
+                    // Display post
+                    displayPost(post);
+                    postForm.reset(); // Reset the form after posting
+                };
+                reader.readAsDataURL(file); // Convert file to Base64
+            } else {
+                const post = { username, content, media: null, timestamp };
+                let posts = JSON.parse(localStorage.getItem(genre)) || [];
+                posts.push(post);
+                localStorage.setItem(genre, JSON.stringify(posts));
+                displayPost(post);
+                postForm.reset(); // Reset the form after posting
+            }
         });
 
+        // Load posts from localStorage for the selected genre
         function loadPosts(genre) {
             postList.innerHTML = '';
             const posts = JSON.parse(localStorage.getItem(genre)) || [];
             posts.forEach(post => displayPost(post));
         }
 
-        function displayPost(post, file = null) {
+        // Display a post
+        function displayPost(post) {
             const li = document.createElement('li');
             li.innerHTML = `<strong>${post.username}</strong> (${post.timestamp})<br>${post.content}`;
 
-            if (file) {
-                const video = document.createElement('video');
-                video.controls = true;
-                video.src = URL.createObjectURL(file);
-                li.appendChild(video);
+            // If the post has media, create an appropriate element
+            if (post.media) {
+                // Determine if media is an image or video based on its prefix
+                const mediaType = post.media.startsWith('data:image/') ? 'image' : 'video';
+                const mediaElement = document.createElement(mediaType === 'image' ? 'img' : 'video');
+                
+                if (mediaType === 'image') {
+                    mediaElement.src = post.media; // Set image source
+                    mediaElement.style.maxWidth = '200px'; // Set maximum width for the image
+                } else {
+                    mediaElement.controls = true; // Add controls for video
+                    mediaElement.src = post.media; // Set video source
+                }
+
+                li.appendChild(mediaElement);
             }
 
             postList.appendChild(li);
         }
     });
 </script>
-
 
 
 
