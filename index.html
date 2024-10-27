@@ -296,6 +296,208 @@
             genreListPage.style.display = 'block';
         });
 
+        <!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChatReal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="termsPage">    
+    <a href="#signin" class="in">ログイン</a>
+    <a href="#sign" class="up">新規会員登録</a>
+
+    <div>
+        <h1 id="signin">ログイン</h1>
+        <form id="loginform">
+            <label for="loginemail">メールアドレス:</label>
+            <input type="email" id="loginemail" required><br><br>
+
+            <label for="loginpassword">パスワード:</label>
+            <input type="password" id="loginpassword" required><br><br>
+
+            <button type="submit">ログイン</button>
+        </form>
+    </div>
+    <br>
+
+    <!-- 利用規約画面 -->
+    <section id="termsPage">
+        <h2 id="sign">新規会員登録</h2>
+        <h1>利用規約</h1>
+        <p>重要事項,他人の意見を１回でも誹謗中傷を起こしたアカウントは停止されます。<br>
+            以上
+        </p>
+        <label>
+            <input type="checkbox" id="agreeCheckbox"> 利用規約に同意します
+        </label>
+        <button id="agreeButton" disabled>次へ</button>
+    </section>
+</div>
+
+<!-- 会員登録画面 -->
+<div id="registrationPage" style="display:none;">
+    <h1>会員登録</h1>
+    <form id="registrationForm">
+        <label for="name">氏名:</label>
+        <input type="text" id="name" required><br><br>
+
+        <label for="age">年齢:</label>
+        <input type="number" id="age" required><br><br>
+
+        <label for="phone">電話番号:</label>
+        <input type="tel" id="phone" required><br><br>
+
+        <label for="email">メールアドレス:</label>
+        <input type="email" id="email" required><br><br>
+
+        <label for="password">パスワード:</label>
+        <input type="password" id="password" required><br><br>
+
+        <button type="submit">会員登録</button>
+    </form>
+</div>
+
+<!-- ジャンル選択画面 -->
+<div id="genrePage" style="display:none;">
+    <h1>興味のあるジャンルを選んでください</h1>
+    <form id="genreForm">
+        <label><input type="checkbox" name="genre" value="売買部門"> 売買部門</label><br>
+        <label><input type="checkbox" name="genre" value="交流部門"> 交流部門</label><br>
+        <label><input type="checkbox" name="genre" value="若者の集い部門"> 若者の集い部門</label><br>
+        <label><input type="checkbox" name="genre" value="習い事・趣味部門"> 習い事・趣味部門</label><br>
+        <label><input type="checkbox" name="genre" value="家庭関連部門"> 家庭関連部門</label><br>
+        <label><input type="checkbox" name="genre" value="政治経済部門"> 政治経済部門</label><br>
+        <label><input type="checkbox" name="genre" value="安全安定部門"> 安全安定部門</label><br>
+        <label><input type="checkbox" name="genre" value="LOVESPACE部門"> LOVESPACE部門</label><br>
+        <button type="submit">次へ</button>
+    </form>
+</div>
+
+<!-- ジャンル一覧画面 -->
+<div id="genreListPage" style="display:none;">
+    <h1>ジャンル一覧</h1>
+    <ul id="genreList">
+        <li><button class="genreButton" data-genre="売買部門">売買部門</button></li>
+        <li><button class="genreButton" data-genre="交流部門">交流部門</button></li>
+        <li><button class="genreButton" data-genre="若者の集い部門">若者の集い部門</button></li>
+        <li><button class="genreButton" data-genre="習い事・趣味部門">習い事・趣味部門</button></li>
+        <li><button class="genreButton" data-genre="家庭関連部門">家庭関連部門</button></li>
+        <li><button class="genreButton" data-genre="政治経済部門">政治経済部門</button></li>
+        <li><button class="genreButton" data-genre="安全安定部門">安全安定部門</button></li>
+        <li><button class="genreButton" data-genre="LOVESPACE部門">LOVESPACE部門</button></li>
+    </ul>
+</div>
+
+<!-- 投稿画面 -->
+<div id="postPage" style="display:none;">
+    <h1 id="postTitle"></h1>
+    <form id="postForm" action="test.html" method="post" enctype="multipart/form-data">
+        <label for="username">ユーザー名:</label>
+        <input type="text" id="username" required><br>
+
+        <textarea id="postContent" placeholder="ここに投稿内容を記載してください" required></textarea><br>
+        <input type="file" name="test" id="filebox">
+        <button type="submit">投稿</button>
+    </form>
+    <!-- 投稿履歴を表示 -->
+    <div id="postHistory">
+        <h2>投稿履歴</h2>
+        <ul id="postList"></ul>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const agreeCheckbox = document.getElementById('agreeCheckbox');
+        const agreeButton = document.getElementById('agreeButton');
+        const termsPage = document.getElementById('termsPage');
+        const registrationPage = document.getElementById('registrationPage');
+        const genrePage = document.getElementById('genrePage');
+        const genreListPage = document.getElementById('genreListPage');
+        const postPage = document.getElementById('postPage');
+        const postTitle = document.getElementById('postTitle');
+        const postForm = document.getElementById('postForm');
+        const postContent = document.getElementById('postContent');
+        const postList = document.getElementById('postList');
+        const loginForm = document.getElementById('loginform'); // 追加
+
+        // 利用規約への同意ボタンの有効化
+        agreeCheckbox.addEventListener('change', function() {
+            agreeButton.disabled = !agreeCheckbox.checked;
+        });
+
+        // 利用規約同意後の登録画面への移動
+        agreeButton.addEventListener('click', function() {
+            termsPage.style.display = 'none';
+            registrationPage.style.display = 'block';
+        });
+
+        // 会員登録フォームの送信
+        document.getElementById('registrationForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            const age = document.getElementById('age').value;
+            const phone = document.getElementById('phone').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            // ユーザーデータをオブジェクトとして保存
+            const userData = { name, age, phone, email, password };
+
+            // ローカルストレージにユーザーデータを保存
+            localStorage.setItem('userData', JSON.stringify(userData));
+            console.log('User Data saved:', userData);
+
+            registrationPage.style.display = 'none';
+            genrePage.style.display = 'block';
+        });
+
+        // ログインフォームの送信
+        loginForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const loginEmail = document.getElementById('loginemail').value;
+            const loginPassword = document.getElementById('loginpassword').value;
+
+            // ローカルストレージからユーザーデータを取得
+            const storedUserData = JSON.parse(localStorage.getItem('userData'));
+
+            // ログイン情報を確認
+            if (storedUserData && storedUserData.email === loginEmail && storedUserData.password === loginPassword) {
+                console.log('ログイン成功:', storedUserData);
+                termsPage.style.display = 'none';
+                genrePage.style.display = 'block';
+            } else {
+                alert('メールアドレスまたはパスワードが間違っています。');
+            }
+        });
+
+        // ジャンル選択の処理
+        document.getElementById('genreForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const selectedGenres = [];
+            document.querySelectorAll('input[name="genre"]:checked').forEach(genre => {
+                selectedGenres.push(genre.value);
+            });
+            console.log('Selected Genres:', selectedGenres);
+            genrePage.style.display = 'none';
+            genreListPage.style.display = 'block';
+        });
+
+        // 投稿機能の処理
+        postForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const content = postContent.value;
+            const username = document.getElementById('username').value;
+            const newPost = document.createElement('li');
+            newPost.textContent = `${username}: ${content}`;
+            postList.appendChild(newPost);
+            postContent.value = ''; // 投稿内容をクリア
+        });
+
         // Capture user info and move to genre page
         document.getElementById('registrationForm').addEventListener('submit', function(e) {
             e.preventDefault();
