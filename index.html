@@ -234,26 +234,8 @@
         const filebox = document.getElementById('filebox');
         const loginForm = document.getElementById('loginform'); // 追加
         
-　　　　　// 会員登録フォームの送信　変えたところ始まり
-        document.getElementById('registrationForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const name = document.getElementById('name').value;
-            const age = document.getElementById('age').value;
-            const phone = document.getElementById('phone').value;
-            const email = document.getElementById('email').value;
-            const password = document.getElementById('password').value;
-
-            // ユーザーデータをオブジェクトとして保存
-            const userData = { name, age, phone, email, password };
-
-            // ローカルストレージにユーザーデータを保存
-            localStorage.setItem('userData', JSON.stringify(userData));
-            console.log('User Data saved:', userData);
-
-            registrationPage.style.display = 'none';
-            genrePage.style.display = 'block';
-        });
-
+　　　　　//変えたところ始まり
+        
         // ログインフォームの送信
         loginForm.addEventListener('submit', function(e) {
             e.preventDefault();
@@ -291,6 +273,27 @@
             registrationPage.style.display = 'none';
             genrePage.style.display = 'block';
         });
+
+        　// 会員登録フォームの送信　変えたところ始まり
+        document.getElementById('registrationForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            const age = document.getElementById('age').value;
+            const phone = document.getElementById('phone').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            // ユーザーデータをオブジェクトとして保存
+            const userData = { name, age, phone, email, password };
+
+            // ローカルストレージにユーザーデータを保存
+            localStorage.setItem('userData', JSON.stringify(userData));
+            console.log('User Data saved:', userData);
+
+            registrationPage.style.display = 'none';
+            genrePage.style.display = 'block';
+        });　//終わり
+
 
         // Capture genre selection and move to genre list page
         document.getElementById('genreForm').addEventListener('submit', function(e) {
