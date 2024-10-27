@@ -141,3 +141,6 @@ button:disabled {
     width: 600px;
     height: auto;
 }
+.genreList {
+    display:genreList
+}
