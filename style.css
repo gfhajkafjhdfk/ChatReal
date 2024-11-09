@@ -61,7 +61,7 @@ button {
     transition: background-color 0.3s;
 }
 button:hover {
-    background-color: #2980b9;
+    background-color: #0056b3;
 }
 button:disabled {
     background-color: #ccc;
