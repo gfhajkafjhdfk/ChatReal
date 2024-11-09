@@ -121,7 +121,7 @@ button:disabled {
     transition: background-color 0.3s,transform 0.2s;
 }
 in:hover {
-     background-color: #EEEEEE;
+     background-color: #FFFF11;
 }
 .up {
     display: inline-block;
@@ -136,7 +136,7 @@ in:hover {
     transition: background-color 0.3s,transform 0.2s;
 }
 up:hover {
-   background-color: #EEEEEE;
+   background-color: #FFFF11;
 }
 .in {
     border-color: #007bff;
