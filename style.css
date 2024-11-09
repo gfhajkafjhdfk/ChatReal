@@ -118,7 +118,10 @@ button:disabled {
     color: #333;
     background-color: #f0f0f0;
     font-size: 16px; 
-    transition: background-color 0.3s;
+    transition: background-color 0.3s,transform 0.2s;
+}
+in:hover {
+     background-color: #EEEEEE;
 }
 .up {
     display: inline-block;
@@ -130,7 +133,10 @@ button:disabled {
     color: #333;
     background-color: #f0f0f0;
     font-size: 16px;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s,transform 0.2s;
+}
+up:hover {
+   background-color: #EEEEEE;
 }
 .in {
     border-color: #007bff;
