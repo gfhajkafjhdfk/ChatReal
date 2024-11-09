@@ -32,12 +32,7 @@ h1 {
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
-#registrationPage {
-    background-color: rgba(255, 255, 255, 0.8);
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-}
+
 form {
     display: flex;
     flex-direction: column;
