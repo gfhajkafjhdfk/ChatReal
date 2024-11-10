@@ -33,6 +33,10 @@ h1 {
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
+.registration-text {
+    color: #5cb85c;
+    font-size: 14px;
+}
 
 form {
     display: flex;
