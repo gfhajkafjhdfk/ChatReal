@@ -17,7 +17,7 @@
 <div>
     <img src="image.jpg" alt="ロゴ" class="login-image">
     <h1 id="signin">ログイン</h1>
-<form id="signform">
+<form id="loginform">
     <label for="loginemail">メールアドレス:</label>
     <input type="email" id="loginemail" placeholder="ご登録されたメールアドレス" required><br><br>
     <label for="loginpassword">パスワード:</label>
@@ -284,6 +284,11 @@
         // Capture genre selection and move to genre list page
         document.getElementById('genreForm').addEventListener('submit', function(e) {
             e.preventDefault();
+            const selectedGenres = [];//追加ここから
+            document.querySelectorAll('input[name="genre"]:checked').forEach(genre => {
+                selectedGenres.push(genre.value);
+            });
+            console.log('Selected Genres:', selectedGenres);//ここまで
             genrePage.style.display = 'none';
             genreListPage.style.display = 'block';
         });
