@@ -230,7 +230,8 @@
         const postForm = document.getElementById('postForm');
         const postContent = document.getElementById('postContent');
         const postList = document.getElementById('postList');
-        const loginForm = document.getElementById('loginform')//追加と削除
+        const filebox = document.getElementById('filebox');
+
         
         // Enable "Agree" button when checkbox is checked
         agreeCheckbox.addEventListener('change', function() {
@@ -246,49 +247,14 @@
         // Capture user info and move to genre page
         document.getElementById('registrationForm').addEventListener('submit', function(e) {
             e.preventDefault();
-　　　　　　　const name = document.getElementById('name').value;//追加ここから
-            const age = document.getElementById('age').value;
-            const phone = document.getElementById('phone').value;
-            const email = document.getElementById('email').value;
-            const password = document.getElementById('password').value;
-
-            // ユーザーデータをオブジェクトとして保存
-            const userData = { name, age, phone, email, password };
-
-            // ローカルストレージにユーザーデータを保存
-            localStorage.setItem('userData', JSON.stringify(userData));
-            console.log('User Data saved:', userData);//追加ここまで
             registrationPage.style.display = 'none';
             genrePage.style.display = 'block';
         });
 
-         // ログインフォームの送信　ここから追加
-        loginForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            const loginEmail = document.getElementById('loginemail').value;
-            const loginPassword = document.getElementById('loginpassword').value;
-
-            // ローカルストレージからユーザーデータを取得
-            const storedUserData = JSON.parse(localStorage.getItem('userData'));
-
-            // ログイン情報を確認
-            if (storedUserData && storedUserData.email === loginEmail && storedUserData.password === loginPassword) {
-                console.log('ログイン成功:', storedUserData);
-                termsPage.style.display = 'none';
-                genrePage.style.display = 'block';
-            } else {
-                alert('メールアドレスまたはパスワードが間違っています。');
-            }
-        });//追加ここまで
         
         // Capture genre selection and move to genre list page
         document.getElementById('genreForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            const selectedGenres = [];//追加ここから
-            document.querySelectorAll('input[name="genre"]:checked').forEach(genre => {
-                selectedGenres.push(genre.value);
-            });
-            console.log('Selected Genres:', selectedGenres);//ここまで
             genrePage.style.display = 'none';
             genreListPage.style.display = 'block';
         });
