@@ -233,12 +233,12 @@
         const filebox = document.getElementById('filebox');
 
         
-        // Enable "Agree" button when checkbox is checked
+        // チェックボックスにチェックを入れると「同意する」ボタンが有効になる
         agreeCheckbox.addEventListener('change', function() {
             agreeButton.disabled = !agreeCheckbox.checked;
         });
        
-        // Navigate to registration page
+        // 登録ページに移動する
         agreeButton.addEventListener('click', function() {
             termsPage.style.display = 'none';
             registrationPage.style.display = 'block';
@@ -259,18 +259,18 @@
             genreListPage.style.display = 'block';
         });
 
-        // Display the relevant genre page when a genre button is clicked
+        // ジャンルボタンをクリックすると該当ジャンルページを表示します
         document.querySelectorAll('.genreButton').forEach(button => {
             button.addEventListener('click', function() {
                 const genre = this.dataset.genre;
                 postTitle.textContent = `${genre} 部門の投稿`;
                 genreListPage.style.display = 'none';
                 postPage.style.display = 'block';
-                loadPosts(genre);  // Load posts from localStorage for the selected genre
+                loadPosts(genre);  // 選択したジャンルの投稿を localStorage から読み込む
             });
         });
 
-        // Function to handle post submissions
+        // 投稿を処理する機能
         postForm.addEventListener('submit', function(e) {
             e.preventDefault();
             const username = document.getElementById('username').value;
@@ -285,41 +285,41 @@
                     const base64Data = e.target.result;
                     const post = { username, content, media: base64Data, timestamp };
 
-                    // Save to localStorage
+                    // ローカルストレージに保存
                     let posts = JSON.parse(localStorage.getItem(genre)) || [];
                     posts.push(post);
                     localStorage.setItem(genre, JSON.stringify(posts));
 
-                    // Display post
+                    // 投稿を表示する
                     displayPost(post);
-                    postForm.reset(); // Reset the form after posting
+                    postForm.reset(); // 投稿後にフォームをリセットする
                 };
-                reader.readAsDataURL(file); // Convert file to Base64
+                reader.readAsDataURL(file); // ファイルをBase64に変換する
             } else {
                 const post = { username, content, media: null, timestamp };
                 let posts = JSON.parse(localStorage.getItem(genre)) || [];
                 posts.push(post);
                 localStorage.setItem(genre, JSON.stringify(posts));
                 displayPost(post);
-                postForm.reset(); // Reset the form after posting
+                postForm.reset(); // 投稿後にフォームをリセットする
             }
         });
 
-        // Load posts from localStorage for the selected genre
+        // 選択したジャンルの投稿を localStorage から読み込む
         function loadPosts(genre) {
             postList.innerHTML = '';
             const posts = JSON.parse(localStorage.getItem(genre)) || [];
             posts.forEach(post => displayPost(post));
         }
 
-        // Display a post
+        // 投稿を表示する
         function displayPost(post) {
             const li = document.createElement('li');
             li.innerHTML = `<strong>${post.username}</strong> (${post.timestamp})<br>${post.content}`;
 
-            // If the post has media, create an appropriate element
+            // 投稿にメディアがある場合は、適切な要素を作成する
             if (post.media) {
-                // Determine if media is an image or video based on its prefix
+                // プレフィックスに基づいてメディアが画像であるかビデオであるかを判断する
                 const mediaType = post.media.startsWith('data:image/') ? 'image' : 'video';
                 const mediaElement = document.createElement(mediaType === 'image' ? 'img' : 'video');
                 
