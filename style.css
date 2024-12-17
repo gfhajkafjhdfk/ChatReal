@@ -84,15 +84,17 @@ button:disabled {
 #genreListPage li {
     margin: 10px 0;
 }
-
 .genreButton {
-    padding: 10px;
+    padding: 20px 30px; /* 余白をさらに大きく */
     background-color: #007BFF;
     color: white;
     border: none;
-    border-radius: 4px;
-    font-size: 16px;
+    border-radius: 6px;
+    font-size: 24px; /* さらに大きな文字サイズ */
+    line-height: 1.5; /* 行の高さを調整 */
+    min-width: 200px; /* ボタンの最小幅を設定 */
     cursor: pointer;
+    text-align: center;
 }
 
 #postForm textarea {
