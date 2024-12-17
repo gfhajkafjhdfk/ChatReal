@@ -85,16 +85,13 @@ button:disabled {
     margin: 10px 0;
 }
 .genreButton {
-    padding: 20px 30px;
+    padding: 10px;
     background-color: #007BFF;
     color: white;
     border: none;
-    border-radius: 6px;
-    font-size: 24px;
-    line-height: 1.5;
-    min-width: 200px;
+    border-radius: 4px;
+    font-size: 16px;
     cursor: pointer;
-    text-align: center;
 }
 
 #postForm textarea {
