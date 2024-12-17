@@ -96,6 +96,10 @@ button:disabled {
     font-size: 16px;
     cursor: pointer;
 }
+.genreButton i {
+    font-size: 20px;
+    color: #dcef4e;
+}
 
 #postForm textarea {
     width: 100%;
