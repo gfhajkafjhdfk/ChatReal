@@ -17,9 +17,6 @@ body::before {
     filter: blur(8px);
     z-index: -1;
 }
-.fa-regular fa-coments-dollar :{
-    font-size: 100px
-}
 
 h1 {
     color: #05a;
