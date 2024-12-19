@@ -334,6 +334,7 @@
             });
         });
 　　　
+        // 「元のページに戻る」ボタンの実装
         document.getElementById("backButton").addEventListener("click", function(event) {
    　　　　　 event.preventDefault(); // デフォルトの動作（#への遷移）を防止
 　　　　// 履歴がある場合は戻る
@@ -341,7 +342,7 @@
       history.back();
     　　　　　} else {
       // 履歴がない場合は特定のURL（例：ホームページ）に遷移
-      window.location.href = "/";
+      window.location.href = "https://gfhajkafjhdfk.github.io/ChatReal/#signin";
     }
   });
         
