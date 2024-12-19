@@ -229,7 +229,7 @@
 <div id="postPage" style="display:none;">
     <h1 id="postTitle"></h1>
     <form id="postForm" action="test.html" method="post" enctype="multipart/form-data"> 
-        <a href="#" id="backButton">前のページに戻る</a>
+         <button id="backButton">前のページに戻る</button>
 
         <label for="username">ユーザー名:</label>
         <input type="text" id="username" required><br>
@@ -335,25 +335,25 @@
         });
 
     //「前のページに戻る」ボタンの実装
-      const historyStack = [];
-
-  document.addEventListener("DOMContentLoaded", function() {
-    const currentPage = window.location.pathname;
-    historyStack.push(currentPage);
-
-    document.getElementById("backButton").addEventListener("click", function(event) {
-      event.preventDefault();
-
-      if (historyStack.length > 1) {
-        historyStack.pop(); // 現在のページを削除
-        const previousPage = historyStack[historyStack.length - 1];
-        window.location.href = previousPage;
-      } else {
-        // 履歴がない場合の代替
-        window.location.href = "https://gfhajkafjhdfk.github.io/ChatReal/#signin";
-      }
-    });
+      document.getElementById("backButton").addEventListener("click", function(event) {
+    event.preventDefault();
+    const previousHash = sessionStorage.getItem("previousPage");
+    if (previousHash) {
+      window.location.hash = previousHash;
+    } else {
+      alert("戻るページがありません！");
+    }
   });
+
+  // 現在のページ（ハッシュ）を記録
+  window.addEventListener("hashchange", function() {
+    sessionStorage.setItem("previousPage", window.location.hash);
+  });
+
+  // 初期ハッシュを設定
+  if (!window.location.hash) {
+    window.location.hash = "#home";
+  }
         
         // 投稿を処理する機能
         postForm.addEventListener('submit', function(e) {
