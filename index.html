@@ -335,25 +335,39 @@
         });
 
     //「前のページに戻る」ボタンの実装
-      document.getElementById("backButton").addEventListener("click", function(event) {
-    event.preventDefault();
-    const previousHash = sessionStorage.getItem("previousPage");
-    if (previousHash) {
-      window.location.hash = previousHash;
-    } else {
-      alert("戻るページがありません！");
+    // 初回ロード時に現在のハッシュを保存
+    if (!sessionStorage.getItem("previousPage")) {
+      sessionStorage.setItem("previousPage", window.location.hash || "#home");
     }
-  });
 
-  // 現在のページ（ハッシュ）を記録
-  window.addEventListener("hashchange", function() {
-    sessionStorage.setItem("previousPage", window.location.hash);
-  });
+    // ハッシュ変更時に「前のページ」を記録
+    window.addEventListener("hashchange", function() {
+      const currentHash = window.location.hash;
+      const previousHash = sessionStorage.getItem("previousPage");
 
-  // 初期ハッシュを設定
-  if (!window.location.hash) {
-    window.location.hash = "#home";
-  }
+      // 現在のハッシュを「前のページ」として保存
+      if (currentHash !== previousHash) {
+        sessionStorage.setItem("previousPage", currentHash);
+      }
+    });
+
+    // 戻るボタンの処理
+    document.getElementById("backButton").addEventListener("click", function(event) {
+      event.preventDefault();
+      const previousHash = sessionStorage.getItem("previousPage");
+      
+      if (previousHash && previousHash !== window.location.hash) {
+        // 前のハッシュが存在し、現在のハッシュと異なる場合のみ戻る
+        window.location.hash = previousHash;
+      } else {
+        alert("戻るページがありません！");
+      }
+    });
+
+    // 初期ハッシュを設定
+    if (!window.location.hash) {
+      window.location.hash = "#home";
+    }
         
         // 投稿を処理する機能
         postForm.addEventListener('submit', function(e) {
