@@ -229,7 +229,7 @@
 <div id="postPage" style="display:none;">
     <h1 id="postTitle"></h1>
     <form id="postForm" action="test.html" method="post" enctype="multipart/form-data"> 
-        <a href="#" id="backButton">前のページに戻る</a>
+        <a href="javascript:history.back()" id="backButton">前のページに戻る</a>
 
         <label for="username">ユーザー名:</label>
         <input type="text" id="username" required><br>
@@ -334,17 +334,6 @@
             });
         });
 　　　
-        // 「元のページに戻る」ボタンの実装
-        document.getElementById("backButton").addEventListener("click", function(event) {
-   　　　　　 event.preventDefault(); // デフォルトの動作（#への遷移）を防止
-　　　　// 履歴がある場合は戻る
-   　if (window.history.length > 1) {
-      history.back();
-    　　　　　} else {
-      // 履歴がない場合は特定のURL（例：ホームページ）に遷移
-      window.location.href = "https://gfhajkafjhdfk.github.io/ChatReal/#signin";
-    }
-  });
         
         // 投稿を処理する機能
         postForm.addEventListener('submit', function(e) {
