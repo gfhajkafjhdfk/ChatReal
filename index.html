@@ -335,24 +335,22 @@
         });
 
     //「前のページに戻る」ボタンの実装
-     document.addEventListener("DOMContentLoaded", function() {
-    // 現在のページ情報を取得
-    const currentPage = window.location.hash || "#home"; // デフォルトを #home に設定
-    const previousPage = sessionStorage.getItem("previousPage");
+      const historyStack = [];
 
-    // 現在のページを記録
-    sessionStorage.setItem("previousPage", currentPage);
+  document.addEventListener("DOMContentLoaded", function() {
+    const currentPage = window.location.pathname;
+    historyStack.push(currentPage);
 
-    // 戻るボタンの動作
     document.getElementById("backButton").addEventListener("click", function(event) {
       event.preventDefault();
 
-      if (previousPage) {
-        // 前のページに戻る
-        window.location.hash = previousPage;
+      if (historyStack.length > 1) {
+        historyStack.pop(); // 現在のページを削除
+        const previousPage = historyStack[historyStack.length - 1];
+        window.location.href = previousPage;
       } else {
-        // 前のページがない場合の代替動作
-        window.location.hash = "#home";
+        // 履歴がない場合の代替
+        window.location.href = "/";
       }
     });
   });
