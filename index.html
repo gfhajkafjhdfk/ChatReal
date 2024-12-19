@@ -335,24 +335,24 @@
         });
 
     //「前のページに戻る」ボタンの実装
-        // ページ遷移時に現在のURLを記録
-  document.addEventListener("DOMContentLoaded", function() {
-    const currentPage = window.location.pathname;
+     document.addEventListener("DOMContentLoaded", function() {
+    // 現在のページ情報を取得
+    const currentPage = window.location.hash || "#home"; // デフォルトを #home に設定
     const previousPage = sessionStorage.getItem("previousPage");
 
-    // 現在のページをセッションストレージに保存
+    // 現在のページを記録
     sessionStorage.setItem("previousPage", currentPage);
 
     // 戻るボタンの動作
     document.getElementById("backButton").addEventListener("click", function(event) {
-      event.preventDefault(); // デフォルト動作を無効化
+      event.preventDefault();
 
       if (previousPage) {
-        // 前のページが記録されていればそのページに移動
-        window.location.href = previousPage;
+        // 前のページに戻る
+        window.location.hash = previousPage;
       } else {
-        // 前のページがない場合は特定のURL（例：ホーム）へ
-        window.location.href = "https://gfhajkafjhdfk.github.io/ChatReal/#signin";
+        // 前のページがない場合の代替動作
+        window.location.hash = "#home";
       }
     });
   });
