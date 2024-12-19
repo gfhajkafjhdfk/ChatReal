@@ -335,38 +335,54 @@
         });
 
     //「前のページに戻る」ボタンの実装
-    // 初回ロード時に現在のハッシュを保存
-    if (!sessionStorage.getItem("previousPage")) {
-      sessionStorage.setItem("previousPage", window.location.hash || "#home");
+      // 初期化処理：ハッシュを保存する配列を用意
+    if (!sessionStorage.getItem("hashHistory")) {
+      sessionStorage.setItem("hashHistory", JSON.stringify(["#home"])); // 初期値を #home に設定
     }
 
-    // ハッシュ変更時に「前のページ」を記録
-    window.addEventListener("hashchange", function() {
-      const currentHash = window.location.hash;
-      const previousHash = sessionStorage.getItem("previousPage");
+    // 現在のハッシュを取得する関数
+    function getCurrentHash() {
+      return window.location.hash || "#home"; // ハッシュが空なら #home とみなす
+    }
 
-      // 現在のハッシュを「前のページ」として保存
-      if (currentHash !== previousHash) {
-        sessionStorage.setItem("previousPage", currentHash);
+    // ハッシュ変更時に履歴を更新
+    window.addEventListener("hashchange", function() {
+      const hashHistory = JSON.parse(sessionStorage.getItem("hashHistory"));
+      const currentHash = getCurrentHash();
+
+      // 配列に現在のハッシュを追加
+      if (hashHistory[hashHistory.length - 1] !== currentHash) {
+        hashHistory.push(currentHash);
+        sessionStorage.setItem("hashHistory", JSON.stringify(hashHistory));
       }
     });
 
     // 戻るボタンの処理
     document.getElementById("backButton").addEventListener("click", function(event) {
       event.preventDefault();
-      const previousHash = sessionStorage.getItem("previousPage");
-      
-      if (previousHash && previousHash !== window.location.hash) {
-        // 前のハッシュが存在し、現在のハッシュと異なる場合のみ戻る
+
+      // 現在の履歴を取得
+      const hashHistory = JSON.parse(sessionStorage.getItem("hashHistory"));
+
+      // 戻る対象が存在する場合
+      if (hashHistory.length > 1) {
+        // 現在のページを履歴から削除
+        hashHistory.pop();
+
+        // 1つ前のハッシュを取得して遷移
+        const previousHash = hashHistory[hashHistory.length - 1];
         window.location.hash = previousHash;
+
+        // 履歴を更新
+        sessionStorage.setItem("hashHistory", JSON.stringify(hashHistory));
       } else {
         alert("戻るページがありません！");
       }
     });
 
-    // 初期ハッシュを設定
+    // ページ初期ロード時のハッシュを設定
     if (!window.location.hash) {
-      window.location.hash = "#home";
+      window.location.hash = "#home"; // 初回ロード時に #home を設定
     }
         
         // 投稿を処理する機能
