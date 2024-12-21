@@ -254,7 +254,7 @@
         document.querySelectorAll('.genreButton').forEach(button => {
             button.addEventListener('click', function() {
                 const genre = this.dataset.genre;
-                postTitle.textContent = `${genre} 部門の投稿`;
+                postTitle.textContent = `${genre} の投稿`;
                 genreListPage.style.display = 'none';
                 postPage.style.display = 'block';
                 loadPosts(genre);  // Load the stored posts for the selected genre
