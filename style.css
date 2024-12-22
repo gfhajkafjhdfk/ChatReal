@@ -375,13 +375,3 @@ button {
   border-radius: 8px;
   object-fit: cover;
 }
-
- #postPage {
-    display: none; /* 必要な場合はこのまま */
-    background-image: url('flower-background.jpg'); /* 背景画像を指定 */
-    background-size: cover; /* 背景画像を要素全体にフィット */
-    background-repeat: no-repeat; /* 繰り返さない */
-    background-position: center; /* 画像を中央に配置 */
-    padding: 20px; /* 中の要素が背景から少し離れるように調整 */
-    border-radius: 10px; /* 角を丸くする（オプション） */
-  }
