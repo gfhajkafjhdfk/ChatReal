@@ -159,8 +159,9 @@ button:disabled {
     margin-bottom: 20px;
 }
 .login-image {
-    width: 600px;
+    max-width: 100%;
     height: auto;
+    display: block;
 }
 #genreListPage {
 display: flex;
