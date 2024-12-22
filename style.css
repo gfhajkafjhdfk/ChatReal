@@ -252,12 +252,12 @@ display: flex;
 
 /* 全体のコンテナ */
 .container {
-  background-color: #ffffff;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   max-width: 600px; /* フォーム全体の幅を指定 */
   margin: 20px auto; /* 中央揃え */
+     background-color: rgba(255, 255, 255, 0.8); /* 半透明の白い背景で内容を読みやすく */
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* 影を追加して立体感を出す */
 }
 
 /* タイトル */
@@ -377,10 +377,19 @@ button {
   object-fit: cover;
 }
 
-.form-container {
-    border: 5px solid #ffb7c5; /* 花をイメージしたピンク色 */
-    border-radius: 15px;
+ #postPage {
+    display: none; /* 必要な場合はこのまま */
+    background-image: url('62577.jpg'); /* 背景画像を指定 */
+    background-size: cover; /* 背景画像を要素全体にフィット */
+    background-repeat: no-repeat; /* 繰り返さない */
+    background-position: center; /* 画像を中央に配置 */
+    padding: 20px; /* 中の要素が背景から少し離れるように調整 */
+    border-radius: 10px; /* 角を丸くする（オプション） */
+  }
+
+  .container {
+    background-color: rgba(255, 255, 255, 0.8); /* 半透明の白い背景で内容を読みやすく */
+    border-radius: 10px;
     padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    background-color: #fffaf0; /* やさしいクリーム色 */
-}
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* 影を追加して立体感を出す */
+  }
