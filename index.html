@@ -227,23 +227,41 @@
 
 <!-- 投稿画面 -->
 <div id="postPage" style="display:none;">
-    <h1 id="postTitle"></h1>
+  <div class="container">
+    <!-- タイトル -->
+    <h1 id="postTitle">クリエイトバザール部門の投稿</h1>
+
+    <!-- 投稿フォーム -->
     <form id="postForm" action="test.html" method="post" enctype="multipart/form-data"> 
-         <button id="backButton">前のページに戻る</button>
+      <button id="backButton" class="back-button">前のページに戻る</button>
 
+      <!-- 入力フィールド -->
+      <div class="form-group">
         <label for="username">ユーザー名:</label>
-        <input type="text" id="username" required><br>
+        <input type="text" id="username" class="input-field" required>
+      </div>
 
-        <textarea id="postContent" placeholder="ここに投稿内容を記載してください（不適切な投稿は控えてください）" required></textarea><br>
-        <input type="file" name="test" id="filebox" accept="image/*">
-        <button type="submit">投稿</button>
+      <div class="form-group">
+        <label for="postContent">投稿内容:</label>
+        <textarea id="postContent" class="textarea-field" placeholder="ここに投稿内容を記載してください（不適切な投稿は控えてください）" required></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="filebox">添付ファイル:</label>
+        <input type="file" name="test" id="filebox" class="file-input" accept="image/*">
+      </div>
+
+      <button type="submit" class="submit-button">投稿</button>
     </form>
-    <!-- 投稿履歴を表示 -->
-    <div id="postHistory">
-        <h2>投稿履歴</h2>
-        <ul id="postList"></ul>
+
+    <!-- 投稿履歴 -->
+    <div id="postHistory" class="post-history">
+      <h2>投稿履歴</h2>
+      <ul id="postList"></ul>
     </div>
+  </div>
 </div>
+
 
 <script>
     document.addEventListener('DOMContentLoaded', function() {
