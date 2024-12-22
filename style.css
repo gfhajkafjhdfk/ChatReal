@@ -212,3 +212,130 @@ display: flex;
     height: 100%;
     border: 0;
 }
+
+/* 全体のコンテナ */
+.container {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 600px; /* フォーム全体の幅を指定 */
+  margin: 20px auto; /* 中央揃え */
+}
+
+/* タイトル */
+h1 {
+  font-size: 24px;
+  color: #333;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* フォームフィールドをまとめる */
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  font-size: 14px;
+  color: #555;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.input-field,
+.textarea-field,
+.file-input {
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.textarea-field {
+  height: 80px;
+  resize: none;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.back-button {
+  background-color: #6c757d;
+  color: white;
+  margin-bottom: 15px;
+}
+
+.back-button:hover {
+  background-color: #5a6268;
+}
+
+.submit-button {
+  background-color: #007BFF;
+  color: white;
+}
+
+.submit-button:hover {
+  background-color: #0056b3;
+}
+
+/* 投稿履歴部分のカード風デザイン */
+.post-history {
+  margin-top: 20px;
+}
+
+.post-history h2 {
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+#postList {
+  list-style: none;
+  padding: 0;
+}
+
+/* 投稿アイテムのカード */
+#postList li {
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 15px;
+  padding: 15px;
+  border: 1px solid #ddd;
+  word-break: break-word; /* 長い投稿内容を折り返す */
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+#postList li:hover {
+  transform: translateY(-5px); /* マウスオーバーでカードが浮き上がる */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* シャドウを増やす */
+}
+
+/* 投稿ユーザー名 */
+#postList li strong {
+  display: block;
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+/* 投稿メディアのスタイル */
+#postList li img,
+#postList li video {
+  display: block;
+  max-width: 100%;
+  margin-top: 10px;
+  border-radius: 8px;
+  object-fit: cover;
+}
