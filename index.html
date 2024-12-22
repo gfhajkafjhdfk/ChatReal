@@ -269,6 +269,17 @@
 
 
 <script>
+// ページの読み込みが完了したらローディング画面を非表示にする
+window.addEventListener('load', () => {
+  const loadingScreen = document.getElementById('loading-screen');
+  const mainContent = document.getElementById('termsPage');
+
+  // ローディング画面を非表示にしてメインコンテンツを表示
+  loadingScreen.style.display = 'none';
+  mainContent.style.display = 'block';
+});
+
+    
     document.addEventListener('DOMContentLoaded', function() {
         const agreeCheckbox = document.getElementById('agreeCheckbox');
         const agreeButton = document.getElementById('agreeButton');
