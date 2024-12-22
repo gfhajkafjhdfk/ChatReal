@@ -335,22 +335,34 @@
         });
 
     //「前のページに戻る」ボタンの実装
-      // 初期化処理：ハッシュを保存する配列を用意
+  // ハッシュ履歴を管理するための初期化
     if (!sessionStorage.getItem("hashHistory")) {
-      sessionStorage.setItem("hashHistory", JSON.stringify(["#home"])); // 初期値を #home に設定
+      sessionStorage.setItem("hashHistory", JSON.stringify([])); // 初期化：空の配列
     }
 
     // 現在のハッシュを取得する関数
     function getCurrentHash() {
-      return window.location.hash || "#home"; // ハッシュが空なら #home とみなす
+      return window.location.hash || "#home"; // ハッシュがない場合は #home を使用
     }
 
-    // ハッシュ変更時に履歴を更新
-    window.addEventListener("hashchange", function() {
+    // ページロード時に現在のハッシュを履歴に追加
+    window.addEventListener("load", function () {
       const hashHistory = JSON.parse(sessionStorage.getItem("hashHistory"));
       const currentHash = getCurrentHash();
 
-      // 配列に現在のハッシュを追加
+      // 履歴に現在のハッシュがなければ追加
+      if (hashHistory[hashHistory.length - 1] !== currentHash) {
+        hashHistory.push(currentHash);
+        sessionStorage.setItem("hashHistory", JSON.stringify(hashHistory));
+      }
+    });
+
+    // ハッシュ変更時に履歴を更新
+    window.addEventListener("hashchange", function () {
+      const hashHistory = JSON.parse(sessionStorage.getItem("hashHistory"));
+      const currentHash = getCurrentHash();
+
+      // 現在のハッシュを履歴に追加
       if (hashHistory[hashHistory.length - 1] !== currentHash) {
         hashHistory.push(currentHash);
         sessionStorage.setItem("hashHistory", JSON.stringify(hashHistory));
@@ -358,31 +370,28 @@
     });
 
     // 戻るボタンの処理
-    document.getElementById("backButton").addEventListener("click", function(event) {
+    document.getElementById("backButton").addEventListener("click", function (event) {
       event.preventDefault();
 
-      // 現在の履歴を取得
+      // 履歴を取得
       const hashHistory = JSON.parse(sessionStorage.getItem("hashHistory"));
 
-      // 戻る対象が存在する場合
       if (hashHistory.length > 1) {
-        // 現在のページを履歴から削除
+        // 現在のハッシュを削除し、1つ前のハッシュに戻る
         hashHistory.pop();
-
-        // 1つ前のハッシュを取得して遷移
         const previousHash = hashHistory[hashHistory.length - 1];
-        window.location.hash = previousHash;
 
-        // 履歴を更新
+        // 履歴を更新して遷移
         sessionStorage.setItem("hashHistory", JSON.stringify(hashHistory));
+        window.location.hash = previousHash;
       } else {
         alert("戻るページがありません！");
       }
     });
 
-    // ページ初期ロード時のハッシュを設定
+    // ページ初期ロード時にハッシュがない場合、#home を設定
     if (!window.location.hash) {
-      window.location.hash = "#home"; // 初回ロード時に #home を設定
+      window.location.hash = "#home";
     }
         
         // 投稿を処理する機能
