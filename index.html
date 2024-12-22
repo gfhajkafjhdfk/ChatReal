@@ -334,15 +334,20 @@
             });
         });
 
-    //「前のページに戻る」ボタンの実装
-  // ハッシュ履歴を管理するための初期化
+   // ハッシュ履歴の管理
     if (!sessionStorage.getItem("hashHistory")) {
-      sessionStorage.setItem("hashHistory", JSON.stringify([])); // 初期化：空の配列
+      sessionStorage.setItem("hashHistory", JSON.stringify(["#home"])); // 初期値
     }
 
     // 現在のハッシュを取得する関数
     function getCurrentHash() {
-      return window.location.hash || "#home"; // ハッシュがない場合は #home を使用
+      return window.location.hash || "#home"; // ハッシュがなければ #home を返す
+    }
+
+    // ハッシュ履歴を確認（デバッグ用）
+    function logHashHistory() {
+      const hashHistory = JSON.parse(sessionStorage.getItem("hashHistory"));
+      console.log("現在のハッシュ履歴:", hashHistory);
     }
 
     // ページロード時に現在のハッシュを履歴に追加
@@ -350,11 +355,12 @@
       const hashHistory = JSON.parse(sessionStorage.getItem("hashHistory"));
       const currentHash = getCurrentHash();
 
-      // 履歴に現在のハッシュがなければ追加
+      // 履歴に現在のハッシュがない場合のみ追加
       if (hashHistory[hashHistory.length - 1] !== currentHash) {
         hashHistory.push(currentHash);
         sessionStorage.setItem("hashHistory", JSON.stringify(hashHistory));
       }
+      logHashHistory(); // デバッグ
     });
 
     // ハッシュ変更時に履歴を更新
@@ -367,6 +373,7 @@
         hashHistory.push(currentHash);
         sessionStorage.setItem("hashHistory", JSON.stringify(hashHistory));
       }
+      logHashHistory(); // デバッグ
     });
 
     // 戻るボタンの処理
@@ -387,9 +394,10 @@
       } else {
         alert("戻るページがありません！");
       }
+      logHashHistory(); // デバッグ
     });
 
-    // ページ初期ロード時にハッシュがない場合、#home を設定
+    // 初期ハッシュを設定
     if (!window.location.hash) {
       window.location.hash = "#home";
     }
