@@ -349,3 +349,19 @@ button {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     background-color: #fffaf0; /* やさしいクリーム色 */
 }
+
+    #flower-petals {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9999;
+    background-image: url('62577.jpg');
+　　animation: fall 5s infinite;
+}
+@keyframes fall {
+    0% { transform: translateY(-100px); }
+    100% { transform: translateY(100vh); }
+}
