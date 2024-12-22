@@ -269,15 +269,24 @@
 
 
 <script>
-// ページの読み込みが完了したらローディング画面を非表示にする
+// ローディング画面を指定時間後に非表示にする
 window.addEventListener('load', () => {
   const loadingScreen = document.getElementById('loading-screen');
   const mainContent = document.getElementById('termsPage');
 
-  // ローディング画面を非表示にしてメインコンテンツを表示
-  loadingScreen.style.display = 'none';
-  mainContent.style.display = 'block';
+  // ローディング画面を3秒後に非表示にしてメインコンテンツを表示
+  const loadingTime = 3000; // 3000ミリ秒（3秒）
+
+  setTimeout(() => {
+    if (loadingScreen && mainContent) {
+      loadingScreen.style.display = 'none'; // ローディング画面を非表示
+      mainContent.style.display = 'block'; // メインコンテンツを表示
+    } else {
+      console.error('要素が見つかりませんでした。');
+    }
+  }, loadingTime);
 });
+
 
     
     document.addEventListener('DOMContentLoaded', function() {
