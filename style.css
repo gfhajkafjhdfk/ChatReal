@@ -65,7 +65,7 @@ h1 {
     -webkit-text-stroke: 1px #99CCCC;
 }
 
-#termsPage, #registrationPage, #genrePage {
+#termsPage,#firstPage, #registrationPage, #genrePage {
     max-width: 600px;
     margin: 0 auto;
     padding: 20px;
