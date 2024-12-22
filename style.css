@@ -378,7 +378,7 @@ button {
 
  #postPage {
     display: none; /* 必要な場合はこのまま */
-    background-image: url('flower-background.jpg'); /* 背景画像を指定 */
+    background-image: url('flower-background(2).jpg'); /* 背景画像を指定 */
     background-size: cover; /* 背景画像を要素全体にフィット */
     background-repeat: no-repeat; /* 繰り返さない */
     background-position: center; /* 画像を中央に配置 */
