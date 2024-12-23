@@ -383,7 +383,7 @@ html, postPage {
 }
 
 postPage {
-  background-image: url('あなたの背景画像のURL'); /* 背景画像のパス */
+  background-image: url('flower-background2.jpg'); /* 背景画像のパス */
   background-attachment: fixed; /* 背景を固定 */
   background-size: cover; /* 背景を画面全体に拡大 */
   background-position: center; /* 背景を中央に配置 */
