@@ -377,11 +377,10 @@ button {
 }
 
  #postPage {
-    display: none; /* 必要な場合はこのまま */
-    background-image: url('flower-background2.jpg'); /* 背景画像を指定 */
-    background-size: cover; /* 背景画像を要素全体にフィット */
-    background-repeat: no-repeat; /* 繰り返さない */
-    background-position: center; /* 画像を中央に配置 */
-     background-color: #ffffff;
-     background-attachment: fixed;
+     background-image: url('flower-background2.jpg'); /* 背景画像のパス */
+  background-attachment: fixed; /* 背景を固定 */
+  background-size: cover; /* 背景を全体に広げる */
+  background-position: center; /* 背景を中央に配置 */
+  background-repeat: no-repeat; /* 繰り返さない */
+  background-color: #ffffff; /* 画像が読み込まれない場合の背景色 */
   }
