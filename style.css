@@ -375,14 +375,8 @@ button {
   border-radius: 8px;
   object-fit: cover;
 }
-
-html, postPage {
-  height: 100%; /* html と body を画面全体の高さに設定 */
-  margin: 0; /* 余白を削除 */
-  padding: 0; /* パディングを削除 */
-}
-
-postPage {
+#postPage {
+  height: 100%; /* #postPage にも高さを設定 */
   background-image: url('flower-background2.jpg'); /* 背景画像のパス */
   background-attachment: fixed; /* 背景を固定 */
   background-size: cover; /* 背景を画面全体に拡大 */
