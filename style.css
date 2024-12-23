@@ -382,6 +382,6 @@ button {
     background-size: cover; /* 背景画像を要素全体にフィット */
     background-repeat: no-repeat; /* 繰り返さない */
     background-position: center; /* 画像を中央に配置 */
-    padding: 20px; /* 中の要素が背景から少し離れるように調整 */
-    border-radius: 10px; /* 角を丸くする（オプション） */
+     background-color: #ffffff;
+     background-attachment: fixed;
   }
