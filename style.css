@@ -132,10 +132,34 @@ button:disabled {
     border-radius: 4px;
     font-size: 16px;
     cursor: pointer;
+    position: relative; /* ツールチップの位置を制御するため */
+
 }
 .genreButton i {
     font-size: 56px;
     color: #dcef4e;
+}
+/* ツールチップのスタイル */
+.genreButton::after {
+    content: attr(data-tooltip); /* data-tooltip属性の内容を表示 */
+    position: absolute;
+    bottom: 100%; /* ボタンの上に表示 */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.8); /* 半透明の背景 */
+    color: white;
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-size: 14px;
+    white-space: nowrap;
+    opacity: 0; /* 初期状態では非表示 */
+    pointer-events: none;
+    transition: opacity 0.3s ease; /* 表示のアニメーション */
+}
+
+/* ホバー時にツールチップを表示 */
+.genreButton:hover::after {
+    opacity: 1; /* ツールチップを表示 */
 }
 
 #postForm textarea {
