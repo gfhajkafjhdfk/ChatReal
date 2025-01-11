@@ -375,12 +375,18 @@ button {
   border-radius: 8px;
   object-fit: cover;
 }
-#postPage {
-  height: 100%; /* #postPage にも高さを設定 */
-  background-image: url('flower-background2.jpg'); /* 背景画像のパス */
-  background-attachment: fixed; /* 背景を固定 */
-  background-size: cover; /* 背景を画面全体に拡大 */
-  background-position: center; /* 背景を中央に配置 */
-  background-repeat: no-repeat; /* 背景を繰り返さない */
-  background-color: #ffffff; /* 背景色を設定（保険） */
+#postPage::before{
+  content: ''; /* `before`疑似要素には必須 */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+background-image: url('flower-background2.jpg'); /* 背景画像のパス */ 
+  background-size: cover; /* 画像を要素にフィット */
+  background-repeat: no-repeat; /* 繰り返しなし */
+  background-position: center; /* 中央揃え */
+  z-index: -1; /* 背景として配置 */
+  opacity: 0.8; /* 必要に応じて透明度を調整 */
 }
+
