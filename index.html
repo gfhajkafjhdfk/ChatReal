@@ -376,6 +376,13 @@ window.addEventListener('DOMContentLoaded', () => {
             });
         });
 
+        //追加　postPage から genreListPage に移動できます
+        document.getElementById('backButton').addEventListener('click', function() { 
+    document.getElementById('postPage').style.display = 'none';
+    document.getElementById('genreListPage').style.display = 'block';
+});
+
+
    // ハッシュ履歴の管理
     if (!sessionStorage.getItem("hashHistory")) {
       sessionStorage.setItem("hashHistory", JSON.stringify(["#home"])); // 初期値
