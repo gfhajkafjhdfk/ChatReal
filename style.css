@@ -57,7 +57,7 @@ body::before {
     #termsPage {
       display: none;
     }
-text {
+.text {
      color: #CC66FF;
     text-align: center;
     margin-top: 20px;
