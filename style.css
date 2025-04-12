@@ -59,9 +59,9 @@ body::before {
     }
 
 h1 {
-    color: #05a;
+    color: #CC66FF;
     text-align: center;
-    margin-top: 20px;
+    margin-top: 40px;
     -webkit-text-stroke: 1px #99CCCC;
 }
 
