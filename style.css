@@ -70,7 +70,7 @@ h1 {
     text-align: center;
     margin-top: 20px;
     font-size:100px;
-    -webkit-text-stroke: 1px #99CCCC;
+    -webkit-text-stroke: 1px #CC00FF;
 }
 
 #termsPage,#firstPage, #registrationPage, #genrePage {
@@ -296,12 +296,7 @@ display: flex;
 }
 
 /* タイトル */
-h1 {
-  font-size: 24px;
-  color: #333;
-  text-align: center;
-  margin-bottom: 20px;
-}
+
 
 /* フォームフィールドをまとめる */
 .form-group {
