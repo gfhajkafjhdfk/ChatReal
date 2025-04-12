@@ -58,6 +58,7 @@ body::before {
   animation: typing 3s steps(20, end), blink .75s step-end infinite;
   font-size: 2rem;
   color: #333;
+ text-align: center;
 }
 
 @keyframes typing {
