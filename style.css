@@ -57,6 +57,13 @@ body::before {
     #termsPage {
       display: none;
     }
+text {
+     color: #CC66FF;
+    text-align: center;
+    margin-top: 20px;
+    font-size:200px;
+    -webkit-text-stroke: 1px #99CCCC;
+}
 
 h1 {
     color: #CC66FF;
