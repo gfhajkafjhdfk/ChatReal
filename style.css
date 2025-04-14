@@ -62,7 +62,7 @@ body::before {
 }
 
 @keyframes typing {
-  from { width: 0 }
+  from { width: 50 }
   to { width: 100% }
 }
 
