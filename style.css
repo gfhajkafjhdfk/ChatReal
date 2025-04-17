@@ -52,14 +52,13 @@ html, body {
  text-align: center;
 }
 
-@keyframes typing {
-  from { width: 50 }
-  to { width: 100% }
-}
-
-@keyframes blink {
-  from, to { border-color: transparent }
-  50% { border-color: #333 }
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 3;
+  }
 }
 
 
