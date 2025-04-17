@@ -38,6 +38,7 @@ body::before {
 
    .imageone{
        width:100%;
+       opacity:0.5;
    } 
 
     #termsPage {
