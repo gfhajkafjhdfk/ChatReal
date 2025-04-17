@@ -51,6 +51,10 @@ html, body {
   color: #7fe3c8;
  text-align: center;
 }
+#animation {
+  animation: fade-in 3s;
+  animation-fill-mode: forwards;
+}
 
 @keyframes fade-in {
   from {
