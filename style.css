@@ -56,7 +56,7 @@ body::before {
   white-space: nowrap;
   border-right: .15em solid #333;
   animation: typing 3s steps(20, end), blink .75s step-end infinite;
-  font-size: 200px;
+  font-size: 100px;
   color: #333;
  text-align: center;
 }
@@ -76,7 +76,7 @@ h1 {
     color: #CC66FF;
     text-align: center;
     margin-top: 20px;
-    font-size: 50px;
+    font-size: 100px;
     -webkit-text-stroke: 1px #CC00FF;
 }
 
