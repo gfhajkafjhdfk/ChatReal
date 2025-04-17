@@ -59,7 +59,7 @@ body::before {
   border-right: .15em solid #333;
   animation: typing 3s steps(20, end), blink .75s step-end infinite;
   font-size: 100px;
-  color: #333;
+  color: #7fe3c8;
  text-align: center;
 }
 
