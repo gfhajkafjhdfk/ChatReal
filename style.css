@@ -38,8 +38,6 @@ body::before {
 
    .imageone{
        width:100%;
-        -ms-filter: blur(6px);
-  filter: blur(6px);
    } 
 
     #termsPage {
