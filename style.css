@@ -36,7 +36,9 @@ body::before {
       z-index: 9999;
     }
 
-    
+   imageone{
+       width:95px;
+   } 
 
     #termsPage {
       display: none;
