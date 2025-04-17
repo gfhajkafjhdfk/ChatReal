@@ -48,7 +48,9 @@ body::before {
     font-size:200px;
     -webkit-text-stroke: 1px #99CCCC;
 }
-
+.page{
+    position::absolute
+}
 .typing-text {
   font-family: 'QuickTrend', sans-serif;
   display: inline-block;
