@@ -38,7 +38,8 @@ body::before {
 
    .imageone{
        width:100%;
-       opacity:0.5;
+        -ms-filter: blur(6px);
+  filter: blur(6px);
    } 
 
     #termsPage {
