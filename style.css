@@ -130,9 +130,7 @@ h3 { font-size: 24px;
   opacity: 0;
 }
 
-.text_wrap:hover .explain {
-  animation: 1s fadeup ease-in-out forwards;
-}
+
 
 @keyframes fadeup {
   0% {
