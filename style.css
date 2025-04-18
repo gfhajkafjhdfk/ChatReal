@@ -114,57 +114,16 @@ h3 { font-size: 24px;
     margin-bottom: 20px; 
    }
 
-.header {
-  display: flex;
-  justify-content: center;
-  margin-top: 50px;
-}
-
-.text_wrap {
-  background-color: antiquewhite;
-  padding: 10px;
-  display: flex;
-  justify-content: center;
-}
 .explain {
   opacity: 0;
+  animation: fadeup 2s ease-out forwards;
+  animation-delay: 1s;
 }
-
-
 
 @keyframes fadeup {
   0% {
     opacity: 0;
     transform: translateY(30px);
-  }
-
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-.header {
-  display: flex;
-  justify-content: center;
-  margin-top: 50px;
-}
-
-.text_wrap {
-  background-color: antiquewhite;
-  padding: 10px;
-  display: flex;
-  justify-content: center;
-}
-.explain {
-  opacity: 0;
-}
-
-
-
-@keyframes fadeup {
-  0% {
-    opacity: 0;
-    transform: translateX(-30px);
   }
 
   100% {
