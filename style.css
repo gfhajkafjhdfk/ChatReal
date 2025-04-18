@@ -193,7 +193,8 @@ button:disabled {
     position: absolute;
     top: 20px;   
     right: 20px;    
-     z-index: 10;
+    z-index: 9999;
+
 }
 .in{
     display: inline-block;
