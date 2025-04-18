@@ -86,6 +86,7 @@ h3 { font-size: 24px;
 }
 
 form {
+     position:absolute;
     display: flex;
     flex-direction: column;
 }
