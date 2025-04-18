@@ -205,7 +205,7 @@ button:disabled {
     text-decoration: none; 
     color: #333;
     background-color: #f0f0f0;
-    font-size: 16px; 
+    font-size: 10px; 
     transition: background-color 0.3s;
 }
 .up {
@@ -217,7 +217,7 @@ button:disabled {
     text-decoration: none;
     color: #333;
     background-color: #f0f0f0;
-    font-size: 16px;
+    font-size: 10px;
     transition: background-color 0.3s;
 }
 
