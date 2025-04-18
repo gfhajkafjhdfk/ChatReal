@@ -39,6 +39,7 @@ html, body {
 }
 .page{
     position:relative;
+    text-align:center;
 }
 .typing-text {
   font-family: 'QuickTrend', sans-serif;
@@ -47,6 +48,7 @@ html, body {
   white-space: nowrap;
   font-size: 300%;
   color: #7fe3c8;
+  margin-left: 18%;
  text-align: center;
 }
 #animation {
