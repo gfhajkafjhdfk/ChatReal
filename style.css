@@ -131,6 +131,18 @@ h3 { font-size: 24px;
     transform: translateY(0);
   }
 }
+.hero {
+  position: relative;
+}
+.text_wrap {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  font-size: 24px;
+  text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+}
 .registration-text {
     color: #000000;
     font-size: 14px;
