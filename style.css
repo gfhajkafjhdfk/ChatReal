@@ -114,26 +114,10 @@ h3 { font-size: 24px;
     margin-bottom: 20px; 
    }
 
-.explain {
-  opacity: 0;
-  animation: fadeup 2s ease-out forwards;
-  animation-delay: 1s;
-}
-
-@keyframes fadeup {
-  0% {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
 .hero {
   position: relative;
 }
+
 .text_wrap {
   position: absolute;
   bottom: 40px;
@@ -143,6 +127,25 @@ h3 { font-size: 24px;
   font-size: 24px;
   text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
 }
+
+.explain {
+  opacity: 0;
+  animation: fadeup 2s ease-out forwards;
+  animation-delay: 1s;
+}
+
+@keyframes fadeup {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, 30px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
+
 .registration-text {
     color: #000000;
     font-size: 14px;
