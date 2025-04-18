@@ -128,7 +128,7 @@ h3 { font-size: 24px;
 .explain {
   opacity: 0;
   animation: fadeup 2s ease-out forwards;
-  animation-delay: 3s;
+  animation-delay: 1.5s;
 }
 
 @keyframes fadeup {
