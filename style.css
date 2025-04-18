@@ -41,16 +41,46 @@ html, body {
     position:relative;
     text-align:center;
 }
-.typing-text {
+@media screen and (min-width: 480px) {
+	/* スマホ */
+	.typing-text {
   font-family: 'QuickTrend', sans-serif;
   display: inline-block;
   overflow: hidden;
   white-space: nowrap;
-  font-size: 300%;
+  font-size: 100px;
   color: #7fe3c8;
   margin-left: 18%;
  text-align: center;
 }
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+	/* タブレット */
+	.typing-text {
+  font-family: 'QuickTrend', sans-serif;
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  font-size: 215px;
+  color: #7fe3c8;
+  margin-left: 18%;
+ text-align: center;
+}
+}
+@media screen and (min-width: 1024px) {
+	/* PC */
+	.typing-text {
+  font-family: 'QuickTrend', sans-serif;
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  font-size: 215px;
+  color: #7fe3c8;
+  margin-left: 18%;
+ text-align: center;
+}
+}
+
 #animation {
   animation: fade-in 3s;
   animation-fill-mode: forwards;
