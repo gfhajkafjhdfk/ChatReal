@@ -114,33 +114,62 @@ h3 { font-size: 24px;
     margin-bottom: 20px; 
    }
 
-.explain {
-     display: block;
-  color: transparent;
-  font-size: 30px;
-  line-height: 1.4;
-  margin-bottom: 40px;
-  background-clip: text;
-  -webkit-background-clip: text;
-  background-size: 300% 300%;
+.catch_copy span {
+  transition: 1s;
+  opacity: 0;
+  transform: translateY(20px);
+  display: block;
+}
+.catch_copy span:first-child {
+  animation: catch_anime 1.4s forwards 1s;　
+}
+.catch_copy span:nth-child(2) {
+  animation: catch_anime 1.4s forwards 2s;
+}
+.catch_copy span:nth-child(3) {
+  animation: catch_anime 1.4s forwards 3s;
+}
+.catch_copy span:nth-child(4) {
+  animation: catch_anime 1.4s forwards 4s;
 }
 
-animation: toRight var(--duration, 2.4s) var(--ease) var(--delay, 0.6s) forwards;
-@keyframes toRight {
-  100% {
-    transform: translate(0, 0);
-    background-position: left 0% center;
+@keyframes catch_anime {
+  0% {
+    transform: translateY(20px);
+  }
+   100% {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
-
-.explain.to__right{
-    background-image: linear-gradient(to right, #000033 30%, rgba(255, 255, 255, 0) 60%);
-  background-position: left 100% center;
-  transform: translate(-20px, 0);
-  -webkit-animation: toRight var(--duration, 2.4s) var(--ease) var(--delay, 0.6s) forwards;
-          animation: toRight var(--duration, 2.4s) var(--ease) var(--delay, 0.6s) forwards;
+.catch_copy span {
+  transition: 1s;
+  opacity: 0;
+  transform: translateY(20px);
+  display: block;
+}
+.catch_copy span:first-child {
+  animation: catch_anime 1.4s forwards 1s;　
+}
+.catch_copy span:nth-child(2) {
+  animation: catch_anime 1.4s forwards 2s;
+}
+.catch_copy span:nth-child(3) {
+  animation: catch_anime 1.4s forwards 3s;
+}
+.catch_copy span:nth-child(4) {
+  animation: catch_anime 1.4s forwards 4s;
 }
 
+@keyframes catch_anime {
+  0% {
+    transform: translateY(20px);
+  }
+   100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 .registration-text {
     color: #000000;
     font-size: 14px;
