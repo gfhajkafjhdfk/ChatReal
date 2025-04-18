@@ -80,6 +80,7 @@ h3 { font-size: 24px;
     text-align:center;
     margin-bottom: 20px; 
    }
+
 .explain {
      display: block;
   color: transparent;
@@ -90,6 +91,7 @@ h3 { font-size: 24px;
   -webkit-background-clip: text;
   background-size: 300% 300%;
 }
+
 animation: toRight var(--duration, 2.4s) var(--ease) var(--delay, 0.6s) forwards;
 @keyframes toRight {
   100% {
@@ -97,13 +99,15 @@ animation: toRight var(--duration, 2.4s) var(--ease) var(--delay, 0.6s) forwards
     background-position: left 0% center;
   }
 }
+
 .explain.to__right{
-    background-image: linear-gradient(to right, #fff 30%, rgba(255, 255, 255, 0) 60%);
+    background-image: linear-gradient(to right, #000033 30%, rgba(255, 255, 255, 0) 60%);
   background-position: left 100% center;
   transform: translate(-20px, 0);
   -webkit-animation: toRight var(--duration, 2.4s) var(--ease) var(--delay, 0.6s) forwards;
           animation: toRight var(--duration, 2.4s) var(--ease) var(--delay, 0.6s) forwards;
 }
+
 .registration-text {
     color: #000000;
     font-size: 14px;
