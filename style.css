@@ -116,6 +116,7 @@ h3 { font-size: 24px;
 
 .hero {
   position: relative;
+z-index: 1; 
 }
 
 .text_wrap {
