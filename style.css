@@ -41,6 +41,21 @@ html, body {
     position:relative;
     text-align:center;
 }
+.explain {
+  opacity: 0;
+  animation: fadeup 2s ease-out forwards;
+  animation-delay: 1.5s;
+}
+.text_wrap {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  font-size: 24px;
+  text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+margin-bottom: 40px;
+}
 @media screen and (min-width: 480px) {
 	/* スマホ */
 	.typing-text {
@@ -56,11 +71,13 @@ top: 20px;
 }
   .explain {
     font-size: 10px;
- margin-left: auto;
-    margin-right: auto;
-    text-align: center;
   }
+.text_wrap {
+	left: 55%;
+	transform: translateX(-55%);
 }
+}
+
 @media screen and (min-width: 768px) and (max-width: 1024px) {
 	/* タブレット */
 	.typing-text {
@@ -76,10 +93,11 @@ top:520px;
 }
  .explain {
     font-size: 24px;
- margin-left: auto;
-    margin-right: auto;
-    text-align: center;
   }
+.text_wrap {
+	left: 55%;
+	transform: translateX(-55%);
+}
 }
 @media screen and (min-width: 1024px) {
 	/* PC */
@@ -96,10 +114,11 @@ top:520px;
 }
  .explain {
     font-size: 32px;
-  margin-left: auto;
-    margin-right: auto;
-    text-align: center;
   }
+.text_wrap {
+	left: 55%;
+	transform: translateX(-55%);
+}
 }
 
 #animation {
@@ -131,27 +150,6 @@ h3 { font-size: 24px;
     text-align:center;
     margin-bottom: 20px; 
    }
-
-
-.text_wrap {
-  position: absolute;
-  bottom: 40px;
-  left: 50%;
-  transform: translateX(-50%);
-  color: white;
-  font-size: 24px;
-  text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
-margin-bottom: 40px;
-}
-
-.explain {
-  opacity: 0;
-  animation: fadeup 2s ease-out forwards;
-  animation-delay: 1.5s;
-margin-left: auto; 
-  margin-right: auto;
-  text-align: center;
-}
 
 @keyframes fadeup {
   0% {
