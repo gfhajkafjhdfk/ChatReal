@@ -282,27 +282,39 @@ text-align: center;
 }
 
 #animation {
-  font-size: 100px;
   font-weight: bold;
   background: linear-gradient(45deg, #ff2fd0, #00e0ff, #7fe3c8);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: bounceIn 10s ease-out forwards, shine 3s infinite linear;
+  animation: bounceIn 1.5s ease-out forwards, shine 3s infinite linear;
   transform-origin: center;
   text-shadow: 0 0 10px rgba(0,0,0,0.2);
+  position: absolute; /* 位置を動かせるようにする */
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, 50%); /* 初期位置 */
 }
 
 @keyframes bounceIn {
   0% {
     opacity: 0;
-    transform: scale(0.5) rotate(-10deg) translate(-50, 50);
+    transform: scale(0.5) rotate(-10deg) translate(-50%, 50%); /* 初期位置を保持 */
   }
   60% {
     opacity: 1;
-    transform: scale(1.2) rotate(5deg) translate(-50, 50);
+    transform: scale(1.2) rotate(5deg) translate(-50%, 50%); /* 初期位置を保持 */
   }
   100% {
-    transform: scale(1) rotate(0deg) translate(-50, -50); /* ここで位置をリセット */
+    transform: scale(1) rotate(0deg) translate(-50%, 50%); /* 初期位置を保持 */
+  }
+}
+
+@keyframes shine {
+  0% {
+    background-position: 0%;
+  }
+  100% {
+    background-position: 200%;
   }
 }
 
