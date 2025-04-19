@@ -23,9 +23,33 @@ html, body {
       z-index: 9999;
     }
 
-   .imageone{
+@media screen and (min-width: 480px) {
+	/* スマホ */
+	 .imageone{
        width:100%;
    } 
+}
+
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+	/* タブレット */
+	 .imageone{
+       width:100%;
+	heigut:400px;
+　　　　object-fit: cover;
+   } 
+}
+@media screen and (min-width: 1024px) {
+	/* PC */
+	 .imageone{
+       width:100%;
+	heigut:600px;
+　　　　object-fit: cover;
+   } 
+}
+
+
+
 
     #termsPage {
       display: none;
