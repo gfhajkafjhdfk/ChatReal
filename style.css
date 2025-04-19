@@ -76,10 +76,6 @@ top: 20px;
 .text_wrap {
     left: 50%;
     transform: translateX(-50%);
-    width: 100%; /* 幅を最大限に */
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
   }
 }
 
