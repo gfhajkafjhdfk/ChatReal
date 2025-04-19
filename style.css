@@ -120,10 +120,6 @@ margin-bottom: 60px;
   .explain {
     font-size: 12px;
   }
-.text_wrap {
-    left: 50%;
-    transform: translateX(-50%);
-  }
 }
 
 
@@ -142,10 +138,6 @@ margin-bottom: 60px;
  .explain {
     font-size: 24px;
   }
-.text_wrap {
-	left: 55%;
-	transform: translateX(-55%);
-}
 }
 @media screen and (min-width: 1024px) {
 	/* PC */
@@ -162,10 +154,6 @@ margin-bottom: 60px;
  .explain {
     font-size: 45px;
   }
-.text_wrap {
-	left: 55%;
-	transform: translateX(-55%);
-}
 }
 
 #animation {
