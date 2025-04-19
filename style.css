@@ -282,39 +282,14 @@ text-align: center;
 }
 
 #animation {
-  font-size: 100px;
-  font-weight: bold;
-  background: linear-gradient(45deg, #ff2fd0, #00e0ff, #7fe3c8);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: bounceIn 1.5s ease-out forwards, shine 3s infinite linear;
-  transform-origin: center;
-  text-shadow: 0 0 10px rgba(0,0,0,0.2);
+　　　　　animation: fade-in 7s;
+	animation-fill-mode: forwards; 
 }
 
-@keyframes bounceIn {
-  0% {
-    opacity: 0;
-    transform: scale(0.5) rotate(-10deg);
-  }
-  60% {
-    opacity: 1;
-    transform: scale(1.2) rotate(5deg);
-  }
-  100% {
-    transform: scale(1) rotate(0deg);
-  }
-}
-
-@keyframes shine {
-  0% {
-    background-position: 0%;
-  }
-  100% {
-    background-position: 200%;
-  }
-}
-
+@keyframes fade-in {
+	from { opacity: 0; } 
+	to { opacity: 1; } 
+} /* ここまでコピー（外部のみ　typingtextは含まない） */
 
 h1 {
     color: #CC66FF;
