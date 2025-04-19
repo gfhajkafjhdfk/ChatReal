@@ -71,12 +71,16 @@ margin-bottom: 40px;
 top: 20px;
 }
   .explain {
-    font-size: 3px;
+    font-size: 12px;
   }
 .text_wrap {
-	left: 50%;
-	transform: translateX(-50%);
-}
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%; /* 幅を最大限に */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
 }
 
 
