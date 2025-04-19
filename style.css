@@ -335,6 +335,16 @@ h3 { font-size: 24px;
   }
 }
 
+.feature-item {
+    margin-bottom: 20px;
+    opacity: 0; 
+    transition: opacity 1s ease-in-out;
+}
+
+.feature-item.fade-in {
+    opacity: 1;
+}
+
 .registration-text {
     color: #000000;
     font-size: 14px;
