@@ -92,6 +92,7 @@ text-align: center;
   }
 }
 .explain {
+  font-family:"Book Antiqua";
   opacity: 0;
   animation: fadeup 2s ease-out forwards;
   animation-delay: 1.5s;
