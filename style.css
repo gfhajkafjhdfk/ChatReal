@@ -89,7 +89,8 @@ margin-bottom: 60px;
   white-space: nowrap;
   font-size: 50px;
   color: #7fe3c8;
-  transform: translate(-50%, -50%)
+  margin-left:50%;
+  top: 15pc;
 }
   .explain {
     font-size: 12px;
