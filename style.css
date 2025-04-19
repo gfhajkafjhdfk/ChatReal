@@ -110,8 +110,7 @@ margin-bottom: 60px;
   white-space: nowrap;
   font-size: 50px;
   color: #7fe3c8;
-  margin-left:20%;
-  top: 20% auto;
+ transform: translate(-50%, -50%)
 }
   .explain {
     font-size: 12px;
@@ -133,8 +132,7 @@ margin-bottom: 60px;
   white-space: nowrap;
   font-size: 115px;
   color: #7fe3c8;
-  margin-left:20%;
-  top:20% auto;
+ transform: translate(-50%, -50%)
 }
  .explain {
     font-size: 24px;
@@ -154,8 +152,7 @@ margin-bottom: 60px;
   white-space: nowrap;
   font-size: 115px;
   color: #7fe3c8;
-  margin-left:20%;
-  top:20% auto;
+ transform: translate(-50%, -50%)
 }
  .explain {
     font-size: 45px;
