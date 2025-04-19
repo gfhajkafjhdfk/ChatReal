@@ -55,7 +55,7 @@ html, body {
 top: 20px;
 }
   .explain {
-    font-size: 18px;
+    font-size: 10px;
   }
 }
 @media screen and (min-width: 768px) and (max-width: 1024px) {
