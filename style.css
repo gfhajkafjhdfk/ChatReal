@@ -108,55 +108,17 @@ text-align: center;
 }
 
 
-@media screen and (min-width: 375px) {
-	/* スマホ */
-	.typing-text {
-  position: absolute; 
+.typing-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   font-family: 'QuickTrend', sans-serif;
-  display: inline-block;
-  overflow: hidden;
-  white-space: nowrap;
-  font-size: 50px;
-  color: #7fe3c8;
- transform: translate(-50%, -50%)
-}
-  .explain {
-    font-size: 12px;
-  }
-}
-
-
-@media screen and (min-width: 768px) and (max-width: 1024px) {
-	/* タブレット */
-	.typing-text {
-  position: absolute; 
-  font-family: 'QuickTrend', sans-serif;
-  display: inline-block;
-  overflow: hidden;
-  white-space: nowrap;
   font-size: 115px;
   color: #7fe3c8;
- transform: translate(-50%, -50%)
-}
- .explain {
-    font-size: 24px;
-  }
-}
-@media screen and (min-width: 1024px) {
-	/* PC */
-	.typing-text {
-  position: absolute; 
-  font-family: 'QuickTrend', sans-serif;
-  display: inline-block;
-  overflow: hidden;
+  text-align: center;
   white-space: nowrap;
-  font-size: 115px;
-  color: #7fe3c8;
- transform: translate(-50%, -50%)
-}
- .explain {
-    font-size: 45px;
-  }
+  z-index: 5;
 }
 
 #animation {
