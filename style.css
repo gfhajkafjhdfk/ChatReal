@@ -129,9 +129,7 @@ margin-bottom: 60px;
   white-space: nowrap;
   font-size: 115px;
   color: #7fe3c8;
-  margin-left: 24%;
- text-align: center;
-top:520px;
+ transform: translate(-50%, -50%)
 }
  .explain {
     font-size: 45px;
