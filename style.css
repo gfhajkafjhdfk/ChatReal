@@ -126,7 +126,7 @@ text-align: center;
 }
 }
 
-@media screen and (min-width: 500px) and (max-midth: 768px;) {
+@media screen and (min-width: 500px) and (max-width: 768px) {
 	/* スマホ */
 .typing-text {
     position: absolute;
@@ -139,7 +139,7 @@ text-align: center;
     text-align: center;
     white-space: nowrap;
     z-index: 5;
-    font-size: 70px;
+    font-size: 90px;
 }
 }
 
@@ -161,7 +161,7 @@ text-align: center;
 }
 }
 
-@media screen and (min-width: 890px) and (max-width: 1024px;){
+@media screen and (min-width: 890px) and (max-width: 1024px){
 	/* スマホ */
 .typing-text {
     position: absolute;
