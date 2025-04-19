@@ -61,6 +61,7 @@ html, body {
     -webkit-text-stroke: 1px #99CCCC;
 }
 .page{
+	display: flex;
     position:relative;
     text-align:center;
 }
