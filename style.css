@@ -139,7 +139,6 @@ margin-bottom: 40px;
   opacity: 0;
   animation: fadeup 2s ease-out forwards;
   animation-delay: 1.5s;
-font-size: 40px;
 }
 
 @keyframes fadeup {
