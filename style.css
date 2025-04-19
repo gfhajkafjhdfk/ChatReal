@@ -23,7 +23,7 @@ html, body {
       z-index: 9999;
     }
 
-@media screen and (min-width: 480px) {
+@media screen and (min-width: 414px) {
 	/* スマホ */
 	 .imageone{
        width:100%;
