@@ -36,7 +36,6 @@ html, body {
 	 .imageone{
        width:100%;
 	heigut:400px;
-　　　　object-fit: cover;
    } 
 }
 @media screen and (min-width: 1024px) {
@@ -90,9 +89,7 @@ margin-bottom: 60px;
   white-space: nowrap;
   font-size: 50px;
   color: #7fe3c8;
-  margin-left: 18%;
- text-align: center;
-top: 20px;
+  transform: translate(-50%, -50%)
 }
   .explain {
     font-size: 12px;
@@ -113,9 +110,7 @@ top: 20px;
   white-space: nowrap;
   font-size: 115px;
   color: #7fe3c8;
-  margin-left: 24%;
- text-align: center;
-top:520px;
+  transform: translate(-50%, -50%)
 }
  .explain {
     font-size: 24px;
