@@ -306,14 +306,6 @@ text-align: center;
   }
 }
 
-@keyframes shine {
-  0% {
-    background-position: 0%;
-  }
-  100% {
-    background-position: 200%;
-  }
-}
 
 h1 {
     color: #CC66FF;
