@@ -110,7 +110,8 @@ margin-bottom: 60px;
   white-space: nowrap;
   font-size: 115px;
   color: #7fe3c8;
-  transform: translate(-50%, -50%)
+  margin-left:20%;
+  top:50px;
 }
  .explain {
     font-size: 24px;
@@ -129,7 +130,8 @@ margin-bottom: 60px;
   white-space: nowrap;
   font-size: 115px;
   color: #7fe3c8;
- transform: translate(-50%, -50%)
+  margin-left:30%;
+top:60px;
 }
  .explain {
     font-size: 45px;
