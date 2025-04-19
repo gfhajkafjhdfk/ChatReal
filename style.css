@@ -48,13 +48,18 @@ html, body {
 }
 .text_wrap {
   position: absolute;
-  bottom: 40px;
+  bottom: 20px; /* 下からの距離を調整して、より下へ */
   left: 50%;
   transform: translateX(-50%);
   color: white;
   font-size: 24px;
   text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
-margin-bottom: 40px;
+  margin-bottom: 0; /* bottom を調整したので margin-bottom は 0 に */
+  width: 90%; /* 横幅を広げる */
+  text-align: center; /* テキストを中央寄せ */
+  white-space: nowrap; /* 改行を禁止 */
+  overflow: hidden; /* 横幅を超えた部分は隠す */
+  text-overflow: ellipsis; /* 横幅を超えた場合に ... を表示 */
 }
 @media screen and (min-width: 480px) {
 	/* スマホ */
@@ -70,11 +75,12 @@ margin-bottom: 40px;
 top: 20px;
 }
   .explain {
-    font-size: 10px;
+    font-size: 16px;
   }
 .text_wrap {
-	left: 50%;
-	transform: translateX(-50%);
+	  bottom: 50px; /* スマートフォンでの下からの距離を調整 */
+    width: 95%; /* スマートフォンでの横幅をさらに広げる */
+    font-size: 18px; /* スマートフォンでのフォントサイズ */
 }
 }
 
@@ -95,8 +101,9 @@ top:520px;
     font-size: 24px;
   }
 .text_wrap {
-	left: 55%;
-	transform: translateX(-55%);
+bottom: 80px; /* タブレットでの下からの距離を調整 */
+    width: 80%; /* タブレットでの横幅を調整 */
+    font-size: 22px; /* タブレットでのフォントサイズ */
 }
 }
 @media screen and (min-width: 1024px) {
@@ -116,8 +123,10 @@ top:520px;
     font-size: 32px;
   }
 .text_wrap {
-	left: 55%;
-	transform: translateX(-55%);
+	    bottom: 100px; /* PCでの下からの距離を調整 */
+    width: 60%; /* PCでの横幅を調整 */
+    font-size: 26px; /* PCでのフォントサイズ */
+
 }
 }
 
