@@ -54,6 +54,9 @@ html, body {
  text-align: center;
 top: 20px;
 }
+  .explain {
+    font-size: 18px;
+  }
 }
 @media screen and (min-width: 768px) and (max-width: 1024px) {
 	/* タブレット */
@@ -68,7 +71,9 @@ top: 20px;
  text-align: center;
 top:520px;
 }
-
+ .explain {
+    font-size: 24px;
+  }
 }
 @media screen and (min-width: 1024px) {
 	/* PC */
@@ -83,7 +88,9 @@ top:520px;
  text-align: center;
 top:520px;
 }
-
+ .explain {
+    font-size: 32px; /* PCでのフォントサイズ（必要であれば調整） */
+  }
 }
 
 #animation {
