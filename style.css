@@ -109,7 +109,7 @@ text-align: center;
   text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
 }
 
-
+/* ここからコピー （外部のみ　typingtextは含まない）*/
 @media screen and (min-width: 375px) {
 	/* スマホ */
 .typing-text {
@@ -210,7 +210,7 @@ text-align: center;
     opacity: 3;
   }
 }
-
+/* ここまでコピー（外部のみ　typingtextは含まない） */
 
 h1 {
     color: #CC66FF;
