@@ -114,7 +114,9 @@ top:520px;
  text-align: center;
 top:520px;
 }
-
+ .explain {
+    font-size: 45px;
+  }
 .text_wrap {
 	left: 55%;
 	transform: translateX(-55%);
