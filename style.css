@@ -103,6 +103,7 @@ margin-bottom: 60px;
 @media screen and (min-width: 375px) {
 	/* スマホ */
 	.typing-text {
+  position: absolute; 
   font-family: 'QuickTrend', sans-serif;
   display: inline-block;
   overflow: hidden;
@@ -125,6 +126,7 @@ margin-bottom: 60px;
 @media screen and (min-width: 768px) and (max-width: 1024px) {
 	/* タブレット */
 	.typing-text {
+  position: absolute; 
   font-family: 'QuickTrend', sans-serif;
   display: inline-block;
   overflow: hidden;
@@ -145,6 +147,7 @@ margin-bottom: 60px;
 @media screen and (min-width: 1024px) {
 	/* PC */
 	.typing-text {
+  position: absolute; 
   font-family: 'QuickTrend', sans-serif;
   display: inline-block;
   overflow: hidden;
