@@ -126,8 +126,25 @@ text-align: center;
 }
 }
 
+@media screen and (min-width: 500px) and (max-midth: 768px;) {
+	/* スマホ */
+.typing-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'QuickTrend', sans-serif;
+    font-size: 115px;
+    color: #7fe3c8;
+    text-align: center;
+    white-space: nowrap;
+    z-index: 5;
+    font-size: 70px;
+}
+}
 
-@media screen and (min-width: 768px) and (max-width: 1024px) {
+
+@media screen and (min-width: 768px) and (max-width: 890px) {
 	/* タブレット */
 	.typing-text {
     position: absolute;
@@ -143,6 +160,25 @@ text-align: center;
     font-size: 100px;
 }
 }
+
+@media screen and (min-width: 890px) and (max-width: 1024px;){
+	/* スマホ */
+.typing-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'QuickTrend', sans-serif;
+    font-size: 115px;
+    color: #7fe3c8;
+    text-align: center;
+    white-space: nowrap;
+    z-index: 5;
+    font-size: 120px;
+}
+}
+
+
 @media screen and (min-width: 1024px) {
 	/* PC */
 	.typing-text {
@@ -156,7 +192,7 @@ text-align: center;
     text-align: center;
     white-space: nowrap;
     z-index: 5;
-    font-size: 100px;
+    font-size: 140px;
 }
 }
 
