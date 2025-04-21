@@ -130,7 +130,7 @@ text-align: center;
 .new {
 font-family: "Book Antiqua";
 position: absolute;
-top: 50pc;
+top: 40pc;
 left: 40%;
 transform: translate(-50%, -50%);
   animation-name: blur;
