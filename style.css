@@ -70,7 +70,7 @@ html, body {
 .new {
 font-family: "Book Antiqua";
 position: absolute;
-top: 40%;
+top: 15pc;
 left: 40%;
 transform: translate(-50%, -50%);
   animation-name: blur;
@@ -90,7 +90,7 @@ text-align: center;
 .new {
 font-family: "Book Antiqua";
 position: absolute;
-top: 40%;
+top: 25pc;
 left: 40%;
 transform: translate(-50%, -50%);
   animation-name: blur;
@@ -110,7 +110,7 @@ text-align: center;
 .new {
 font-family: "Book Antiqua";
 position: absolute;
-top: 40%;
+top: 30pc;
 left: 40%;
 transform: translate(-50%, -50%);
   animation-name: blur;
@@ -130,7 +130,7 @@ text-align: center;
 .new {
 font-family: "Book Antiqua";
 position: absolute;
-top: 40%;
+top: 50pc;
 left: 40%;
 transform: translate(-50%, -50%);
   animation-name: blur;
@@ -150,7 +150,7 @@ text-align: center;
 .new {
 font-family: "Book Antiqua";
 position: absolute;
-top: 40%;
+top: 50pc;
 left: 45%;
 transform: translate(-50%, -50%);
   animation-name: blur;
