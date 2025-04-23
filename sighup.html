@@ -138,6 +138,21 @@
         </form>
     </div>
 <script>
+  document.addEventListener('DOMContentLoaded', function() {
+        const agreeCheckbox = document.getElementById('agreeCheckbox');
+        const agreeButton = document.getElementById('agreeButton');
+        const termsPage = document.getElementById('termsPage');
+        const registrationPage = document.getElementById('registrationPage');
+        const genrePage = document.getElementById('genrePage');
+        const genreListPage = document.getElementById('genreListPage');
+        const postPage = document.getElementById('postPage');
+        const postTitle = document.getElementById('postTitle');
+        const postForm = document.getElementById('postForm');
+        const postContent = document.getElementById('postContent');
+        const postList = document.getElementById('postList');
+       const loginForm = document.getElementById('loginform'); // 追加
+
+  
  // チェックボックスにチェックを入れると「同意する」ボタンが有効になる（新規ユーザ用）
         agreeCheckbox.addEventListener('change', function() {
             agreeButton.disabled = !agreeCheckbox.checked;
