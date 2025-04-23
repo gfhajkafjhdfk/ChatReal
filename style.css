@@ -232,7 +232,7 @@ text-align: center;
 .text_wrap {
   position: absolute;
   top: 75%;
-  left: 65%;
+  left: 70%;
   transform: translate(-50%, -50%);
   text-align: center;
   z-index: 2;
