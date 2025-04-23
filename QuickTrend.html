@@ -3,6 +3,27 @@
   
 </head>
 <body>
+<!-- ジャンル選択画面 -->
+    <div id="genrePage" style="display:none;">
+        <h3>興味のあるジャンルを選んでください</h3>
+        <form id="genreForm">
+            <label><input type="checkbox" name="genre" value="クリエイトバザール"> クリエイトバザール</label><br>
+            <label><input type="checkbox" name="genre" value="つながリンク"> つながリンク</label><br>
+            <label><input type="checkbox" name="genre" value="トレンドスポット"> トレンドスポット</label><br>
+            <label><input type="checkbox" name="genre" value="わくわくワークショップ"> わくわくワークショップ</label><br>
+            <label><input type="checkbox" name="genre" value="ハッピーリビング"> ハッピーリビング</label><br>
+            <label><input type="checkbox" name="genre" value="政治経済"> 政治経済</label><br>
+            <label><input type="checkbox" name="genre" value="くらしのバリア"> くらしのバリア</label><br>
+            <label><input type="checkbox" name="genre" value="LOVESPACE"> LOVESPACE</label><br>
+            <label><input type="checkbox" name="genre" value="チャレンジステップ"> チャレンジステップ</label><br>
+            <label><input type="checkbox" name="genre" value="CREATION"> CREATION</label><br>
+            <label><input type="checkbox" name="genre" value="リラックススペース"> リラックススペース</label><br>
+            <label><input type="checkbox" name="genre" value="ミライソダテル"> ミライソダテル</label><br>
+            <button type="submit">次へ</button>
+        </form>
+    </div>
+
+  
 //ここに付け足す
 <script>//ジャンル選択をキャプチャし、ジャンルリストページに移動する（ログイン用）
         document.getElementById('genreForm').addEventListener('submit', function(e) {
