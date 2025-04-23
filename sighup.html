@@ -180,8 +180,13 @@
             localStorage.setItem('userData', JSON.stringify(userData));
             console.log('User Data saved:', userData);//ここまで
 
-            registrationPage.style.display = 'none';//ここのhtmlからQuickTrend.htmlへ移動
-            genrePage.style.display = 'block';//ここまで
+          // replaceメソッドを使う
+          window.location.replace('page3.html');
+          // 「location」の手前に書くのは、「window」でも「document」でもよい
+           // あるいは、省略しても構わない
+
+            //registrationPage.style.display = 'none';//ここのhtmlからQuickTrend.htmlへ移動
+            //genrePage.style.display = 'block';//ここまで
         });//ここまで新規ユーザ用
 </script>
   </body>
