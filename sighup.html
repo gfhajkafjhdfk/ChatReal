@@ -138,7 +138,36 @@
         </form>
     </div>
 <script>
+ // チェックボックスにチェックを入れると「同意する」ボタンが有効になる（新規ユーザ用）
+        agreeCheckbox.addEventListener('change', function() {
+            agreeButton.disabled = !agreeCheckbox.checked;
+        });
+       
+        // 登録ページに移動する もし、会員登録やログインを別のhtmlに移行してやる場合TermPageを別のクラスへ変える　（新規ユーザ用）
+        agreeButton.addEventListener('click', function() {
+            termsPage.style.display = 'none';
+            registrationPage.style.display = 'block';
+        });
 
+        // ユーザー情報を取得してジャンルページに移動する（新規ユーザ用）
+        document.getElementById('registrationForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('name').value;//ここから
+            const age = document.getElementById('age').value;
+            const phone = document.getElementById('phone').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            // ユーザーデータをオブジェクトとして保存
+            const userData = { name, age, phone, email, password };
+
+            // ローカルストレージにユーザーデータを保存
+            localStorage.setItem('userData', JSON.stringify(userData));
+            console.log('User Data saved:', userData);//ここまで
+
+            registrationPage.style.display = 'none';
+            genrePage.style.display = 'block';
+        });//ここまで新規ユーザ用
 </script>
   </body>
 </html>
