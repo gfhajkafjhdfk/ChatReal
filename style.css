@@ -165,6 +165,45 @@ text-align: center;
 }
 }
 
+@media screen and (min-width: 375px) {
+	/* スマホ */
+.text_wrap {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* ← これだけで中央配置OK */
+  text-align: center;
+  z-index: 2;
+  color: white;
+  font-size: 24px;
+  text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+}
+}
+	
+	@media screen and (min-width: 500px) and (max-width: 768px) {
+	/* スマホ */
+
+}
+	}
+
+@media screen and (min-width: 768px) and (max-width: 890px) {
+	/* タブレット */
+
+}
+}
+
+@media screen and (min-width: 890px) and (max-width: 1024px){
+	/* スマホ */
+
+}
+}
+
+	@media screen and (min-width: 1024px) {
+	/* PC */
+
+}
+}
+
 @keyframes blur{
   from {
     filter: blur(50px);
