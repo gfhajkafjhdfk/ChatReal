@@ -1,1 +1,20 @@
-
+<html>
+<head>
+  
+</head>
+<body>
+//ここに付け足す
+<script>//ジャンル選択をキャプチャし、ジャンルリストページに移動する（ログイン用）
+        document.getElementById('genreForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+             const selectedGenres = [];//ここから
+            document.querySelectorAll('input[name="genre"]:checked').forEach(genre => {
+                selectedGenres.push(genre.value);
+            });
+            console.log('Selected Genres:', selectedGenres);//ここまで
+            genrePage.style.display = 'none';
+            genreListPage.style.display = 'block';
+        });//（ログイン用ここまで）
+</script>
+</body>
+  </html>
