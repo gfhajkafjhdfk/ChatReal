@@ -231,7 +231,7 @@ text-align: center;
 	/* PC */
 .text_wrap {
   position: absolute;
-  top: 90%;
+  top: 75%;
   left: 65%;
   transform: translate(-50%, -50%);
   text-align: center;
