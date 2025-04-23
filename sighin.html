@@ -16,5 +16,37 @@
                                  <button type="submit">ログイン</button>
                                 </form>
                             </div>
+     <script>
+        loginForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const loginEmail = document.getElementById('loginemail').value;
+            const loginPassword = document.getElementById('loginpassword').value;
+
+            // ローカルストレージからユーザーデータを取得
+            const storedUserData = JSON.parse(localStorage.getItem('userData'));
+
+            // ログイン情報を確認
+            if (storedUserData && storedUserData.email === loginEmail && storedUserData.password === loginPassword) {
+                console.log('ログイン成功:', storedUserData);
+                termsPage.style.display = 'none';
+                genrePage.style.display = 'block';
+            } else {
+                alert('メールアドレスまたはパスワードが間違っています。');
+            }
+        });//add
+        
+        //ジャンル選択をキャプチャし、ジャンルリストページに移動する（ログイン用）
+        document.getElementById('genreForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+             const selectedGenres = [];//ここから
+            document.querySelectorAll('input[name="genre"]:checked').forEach(genre => {
+                selectedGenres.push(genre.value);
+            });
+            console.log('Selected Genres:', selectedGenres);//ここまで
+            genrePage.style.display = 'none';
+            genreListPage.style.display = 'block';
+        });//（ログイン用ここまで）
+
+     </script>
   </body>
 </html>
