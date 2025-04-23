@@ -113,7 +113,6 @@
         </label>
         <button id="agreeButton" disabled>次へ</button>
       </div>
-</div><!-- このdivまでがTermPageになっている -->
 
     <!-- 会員登録画面 -->
     <div id="registrationPage" style="display:none;">
@@ -160,7 +159,7 @@
        
         // 登録ページに移動する もし、会員登録やログインを別のhtmlに移行してやる場合TermPageを別のクラスへ変える　（新規ユーザ用）
         agreeButton.addEventListener('click', function() {
-            termsPage.style.display = 'none';//ここのページから違う画面へと移動！（オブジェクト指向なし）
+            firstPage.style.display = 'none';//ここのページから違う画面へと移動！（オブジェクト指向なし）
             registrationPage.style.display = 'block';
         });
 
