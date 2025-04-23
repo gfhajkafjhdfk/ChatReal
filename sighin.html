@@ -43,8 +43,13 @@
             // ログイン情報を確認
             if (storedUserData && storedUserData.email === loginEmail && storedUserData.password === loginPassword) {
                 console.log('ログイン成功:', storedUserData);
-                termsPage.style.display = 'none';//このhtmlからQuickTrend.htmlへ移動する
-                genrePage.style.display = 'block';//ここまで
+                // replaceメソッドを使う
+                window.location.replace('QuickTrend.html');
+                // 「location」の手前に書くのは、「window」でも「document」でもよい
+                // あるいは、省略しても構わない
+               
+                //termsPage.style.display = 'none';//このhtmlからQuickTrend.htmlへ移動する
+                //genrePage.style.display = 'block';//ここまで
             } else {
                 alert('メールアドレスまたはパスワードが間違っています。');
             }
