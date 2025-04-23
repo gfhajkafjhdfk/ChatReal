@@ -17,6 +17,21 @@
                                 </form>
                             </div>
      <script>
+  document.addEventListener('DOMContentLoaded', function() {
+        const agreeCheckbox = document.getElementById('agreeCheckbox');
+        const agreeButton = document.getElementById('agreeButton');
+        const termsPage = document.getElementById('termsPage');
+        const registrationPage = document.getElementById('registrationPage');
+        const genrePage = document.getElementById('genrePage');
+        const genreListPage = document.getElementById('genreListPage');
+        const postPage = document.getElementById('postPage');
+        const postTitle = document.getElementById('postTitle');
+        const postForm = document.getElementById('postForm');
+        const postContent = document.getElementById('postContent');
+        const postList = document.getElementById('postList');
+       const loginForm = document.getElementById('loginform'); // 追加
+
+        
         loginForm.addEventListener('submit', function(e) {
             e.preventDefault();
             const loginEmail = document.getElementById('loginemail').value;
