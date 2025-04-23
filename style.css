@@ -258,17 +258,6 @@ text-align: center;
   animation: fadeup 2s ease-out forwards;
   animation-delay: 1.5s;
 }
-.text_wrap {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%); /* ← これだけで中央配置OK */
-  text-align: center;
-  z-index: 2;
-  color: white;
-  font-size: 24px;
-  text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
-}
 
 /* ここからコピー （外部のみ　typingtextは含まない）*/
 @media screen and (min-width: 375px) {
