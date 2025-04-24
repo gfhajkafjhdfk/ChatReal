@@ -416,7 +416,7 @@ h3 { font-size: 24px;
 .feature-item {
     margin-bottom: 20px;
     opacity: 0;
-    transition: opacity 2.8s ease-in-out;
+    transition: opacity 2.4s ease-in-out;
 }
 
 .feature-item.fade-in {
