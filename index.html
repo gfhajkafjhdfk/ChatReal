@@ -156,6 +156,23 @@ window.addEventListener('DOMContentLoaded', () => {
       }, 3000);
     });
 
+// フェードイン関係
+    const featureItems = document.querySelectorAll('.feature-item');
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('fade-in');
+      }
+    });
+  }, {
+    threshold: 0.1
+  });
+
+  featureItems.forEach(item => {
+    observer.observe(item);
+  });
+    
     document.addEventListener('DOMContentLoaded', function() {
         const agreeCheckbox = document.getElementById('agreeCheckbox');
         const agreeButton = document.getElementById('agreeButton');
