@@ -257,6 +257,7 @@ text-align: center;
   opacity: 0;
   animation: fadeup 2s ease-out forwards;
   animation-delay: 1.5s;
+white-space: nowrap; /* 追加 */
 }
 
 /* ここからコピー （外部のみ　typingtextは含まない）*/
