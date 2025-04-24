@@ -59,49 +59,5 @@
     });
   });
 </script>
-
-
-        
-  document.addEventListener('DOMContentLoaded', function() {
-        const agreeCheckbox = document.getElementById('agreeCheckbox');
-        const agreeButton = document.getElementById('agreeButton');
-        const termsPage = document.getElementById('termsPage');
-        const registrationPage = document.getElementById('registrationPage');
-        const genrePage = document.getElementById('genrePage');
-        const genreListPage = document.getElementById('genreListPage');
-        const postPage = document.getElementById('postPage');
-        const postTitle = document.getElementById('postTitle');
-        const postForm = document.getElementById('postForm');
-        const postContent = document.getElementById('postContent');
-        const postList = document.getElementById('postList');
-       const loginForm = document.getElementById('loginform'); // 追加
-
-        
-        loginForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            const loginEmail = document.getElementById('loginemail').value;
-            const loginPassword = document.getElementById('loginpassword').value;
-
-            // ローカルストレージからユーザーデータを取得
-            const storedUserData = JSON.parse(localStorage.getItem('userData'));
-
-            // ログイン情報を確認
-            if (storedUserData && storedUserData.email === loginEmail && storedUserData.password === loginPassword) {
-                console.log('ログイン成功:', storedUserData);
-                // replaceメソッドを使う
-                window.location.replace('QuickTrend.html');
-                // 「location」の手前に書くのは、「window」でも「document」でもよい
-                // あるいは、省略しても構わない
-               
-                //termsPage.style.display = 'none';//このhtmlからQuickTrend.htmlへ移動する
-                //genrePage.style.display = 'block';//ここまで
-            } else {
-                alert('メールアドレスまたはパスワードが間違っています。');
-            }
-        });//add
-        
-      
-
-
   </body>
 </html>
