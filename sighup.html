@@ -151,13 +151,21 @@ document.addEventListener('DOMContentLoaded', () => {
     agreeButton.disabled = !agreeCheckbox.checked;
   });
 
+
+  // 登録ページに移動する もし、会員登録やログインを別のhtmlに移行してやる場合TermPageを別のクラスへ変える　（新規ユーザ用）
+        agreeButton.addEventListener('click', function() {
+            firstPage.style.display = 'none';//ここのページから違う画面へと移動！（オブジェクト指向なし）
+            registrationPage.style.display = 'block';
+        });
+
+
   // 「同意する」ボタンクリック時に登録ページへ遷移
-  agreeButton?.addEventListener('click', () => {
-    if (firstPage && registrationPage) {
-      firstPage.style.display = 'none';
-      registrationPage.style.display = 'block';
-    }
-  });
+  //agreeButton?.addEventListener('click', () => {
+    //if (firstPage && registrationPage) {
+      //firstPage.style.display = 'none';
+      //registrationPage.style.display = 'block';
+   // }
+  //});
 
   // 登録フォームの送信処理
   registrationForm?.addEventListener('submit', (e) => {
