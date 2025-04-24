@@ -137,7 +137,55 @@
         </form>
     </div>
 <script>
-  document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', () => {
+  // ページ要素の取得
+  const agreeCheckbox = document.getElementById('agreeCheckbox');
+  const agreeButton = document.getElementById('agreeButton');
+  const firstPage = document.getElementById('termsPage'); // ← 元の firstPage を修正
+  const registrationPage = document.getElementById('registrationPage');
+  const loginForm = document.getElementById('loginform');
+  const registrationForm = document.getElementById('registrationForm');
+
+  // チェックボックスの状態で「同意する」ボタンの有効化を切り替え
+  agreeCheckbox?.addEventListener('change', () => {
+    agreeButton.disabled = !agreeCheckbox.checked;
+  });
+
+  // 「同意する」ボタンクリック時に登録ページへ遷移
+  agreeButton?.addEventListener('click', () => {
+    if (firstPage && registrationPage) {
+      firstPage.style.display = 'none';
+      registrationPage.style.display = 'block';
+    }
+  });
+
+  // 登録フォームの送信処理
+  registrationForm?.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    // 入力されたユーザー情報を取得
+    const name = document.getElementById('name')?.value || '';
+    const age = document.getElementById('age')?.value || '';
+    const phone = document.getElementById('phone')?.value || '';
+    const email = document.getElementById('email')?.value || '';
+    const password = document.getElementById('password')?.value || '';
+
+    // ユーザーデータをローカルストレージに保存
+    const userData = { name, age, phone, email, password };
+    localStorage.setItem('userData', JSON.stringify(userData));
+    console.log('User Data saved:', userData);
+
+    // QuickTrendのトップページに移動（リロードあり）
+    window.location.replace('QuickTrend.html');
+  });
+});
+</script>
+
+
+
+
+  
+ <!-- document.addEventListener('DOMContentLoaded', function() {
         const agreeCheckbox = document.getElementById('agreeCheckbox');
         const agreeButton = document.getElementById('agreeButton');
         const termsPage = document.getElementById('termsPage');
@@ -187,6 +235,6 @@
             //registrationPage.style.display = 'none';//ここのhtmlからQuickTrend.htmlへ移動
             //genrePage.style.display = 'block';//ここまで
         });//ここまで新規ユーザ用
-</script>
+</script>-->
   </body>
 </html>
