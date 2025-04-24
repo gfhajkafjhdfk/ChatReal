@@ -415,7 +415,7 @@ h3 { font-size: 24px;
 
 .feature-item {
     margin-bottom: 20px;
-    opacity: 0; 
+    opacity: 0;
     transition: opacity 1s ease-in-out;
 }
 
