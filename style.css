@@ -692,6 +692,10 @@ button {
   transition: background-color 0.3s;
 }
 
+.backnumber{
+	
+}
+
 .back-button {
   background-color: #6c757d;
   color: white;
