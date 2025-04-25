@@ -66,6 +66,10 @@ html, body {
     text-align:center;
 }
 
+.diagonal{
+	font-style: oblique;
+}
+
 .intro {
 font-size: 30px
 }
