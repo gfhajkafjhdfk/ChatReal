@@ -69,6 +69,10 @@ html, body {
 .intro {
 font-size: 30px
 }
+
+.highlight {
+	color: #40e0d0
+}
 	@media screen and (min-width: 375px) {
 	/* スマホ */
 .new {
