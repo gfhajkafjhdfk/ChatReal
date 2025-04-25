@@ -131,7 +131,11 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
 
-    
+     //追加　postPage から genreListPage に移動できます         
+  document.getElementById('backButton').addEventListener('click', function() {      
+    document.getElementById('postPage').style.display = 'none';     
+    document.getElementById('genreListPage').style.display = 'block'; 
+  });
   
         
         // 投稿を処理する機能
