@@ -72,6 +72,8 @@ font-size: 30px
 
 .highlight {
 	color: #40e0d0
+	-webkit-text-stroke: 2px #000;
+	text-stroke: 2px #000;
 }
 	@media screen and (min-width: 375px) {
 	/* スマホ */
