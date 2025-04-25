@@ -73,8 +73,8 @@ font-size: 30px
 .highlight {
 	color: #40e0d0;
 	font-weight: bold;
-	-webkit-text-stroke: 1px #000;
-	text-stroke: 1px #000;
+	-webkit-text-stroke: 0.7px #000;
+	text-stroke: 0.7px #000;
 }
 
 .feature-text {
