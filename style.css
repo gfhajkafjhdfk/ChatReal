@@ -224,6 +224,7 @@ text-align: center;
   color: white;
   font-size: 30px;
   text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+white-space: nowrap;
 }
 }
 
