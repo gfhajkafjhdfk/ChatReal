@@ -451,12 +451,14 @@ h3 { font-size: 24px;
     opacity: 0;
     transition: opacity 2.4s ease-in-out;
     background-color: #ffffff;
-    border-radius: 16px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    max-width: 90%;  /* レスポンシブ対応 */
+    border-radius: 12px;  
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04); 
+    border: 1px solid #ddd; 
+    padding: 24px;  
+    max-width: 90%;
     text-align: left;
 }
+
 
 
 .feature-item.fade-in {
