@@ -81,6 +81,14 @@ font-size: 30px;
 	text-stroke: 0.7px #000;
 }
 
+.feature {
+	display: flex;
+	flex-wrap: wrap;
+	justify-context: center;
+	gap: 20px;
+	padding: 20px;
+}
+
 .feature-text {
 	font-size: 22px;
 	text-align: center;
@@ -445,10 +453,18 @@ h3 { font-size: 24px;
     margin-bottom: 20px;
     opacity: 0;
     transition: opacity 2.4s ease-in-out;
+background-color: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 300px;
+    flex: 1 1 280px;
+    text-align: left;
 }
 
 .feature-item.fade-in {
     opacity: 1;
+	transform: translateY(0);
 }
 
 .registration-text {
