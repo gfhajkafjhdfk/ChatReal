@@ -450,7 +450,6 @@ h3 { font-size: 24px;
     margin: 20px auto;
     opacity: 0;
     transition: opacity 2.4s ease-in-out;
-
     background-color: #ffffff;
     border-radius: 16px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -463,6 +462,13 @@ h3 { font-size: 24px;
 .feature-item.fade-in {
     opacity: 1;
 }
+
+.feature-item:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    transform: scale(1.01);
+}
+
+
 .registration-text {
     color: #000000;
     font-size: 14px;
