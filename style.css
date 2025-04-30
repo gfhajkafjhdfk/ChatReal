@@ -781,6 +781,17 @@ button {
   text-align: center;
 }
 
+#firstPage{
+	max-width: 800px;
+	margin: 0 auto;
+	padding: 20px;
+	backgroud: #f7f7f7;
+	font-size: 14px;
+	line-height: 1.8;
+	overflow: visible;
+	height: auto;
+}
+
 #postList {
   list-style: none;
   padding: 0;
