@@ -795,7 +795,7 @@ button {
 }
 
 .terms-scroll{
-	height: 200px;
+	height: 200px;/*スマホ版にも対応できるように改善*/
 	overflow-y: scroll;
 	border: 1px solid #ccc;
 	padding: 16px;
