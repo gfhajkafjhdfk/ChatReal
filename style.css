@@ -82,9 +82,14 @@ font-size: 30px;
 }
 
 .feature {
-	display: block;
-	padding: 20px;
+  display: block;
+  padding: 20px;
+  background-image: url('backimage.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
+
 
 .feature-text {
 	font-size: 22px;
