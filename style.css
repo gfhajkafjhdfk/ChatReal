@@ -526,6 +526,10 @@ button:disabled {
     background-color: #ccc;
 }
 
+.toback {
+	  background-image: url("backimage.jpg");
+}
+
 #genrePage{
 	max-width: 800px;
 	margin: 0 auto;
