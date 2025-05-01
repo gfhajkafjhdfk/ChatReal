@@ -470,6 +470,16 @@ h3 { font-size: 24px;
     transform: scale(1.01);
 }
 
+#registrationPage{
+	max-width: 800px;
+	margin: 0 auto;
+	padding: 20px;
+	backgroud: #f7f7f7;
+	font-size: 14px;
+	line-height: 1.8;
+	overflow: visible;
+	height: auto;
+}
 
 .registration-text {
     color: #000000;
