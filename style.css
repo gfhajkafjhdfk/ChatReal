@@ -530,6 +530,42 @@ button:disabled {
 	  background-image: url("backimage.jpg");
 }
 
+#genreForm label {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    padding: 8px 12px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    box-shadow: 1px 1px 3px rgba(0,0,0,0.05);
+}
+
+#genreForm input[type="checkbox"] {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 1px solid #bbb;
+    border-radius: 3px;
+    background-color: #eee;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+}
+
+#genreForm input[type="checkbox"]:checked::before {
+    content: '✔';
+    font-size: 16px;
+    color: #007bff;
+}
+
+#genreForm label span {
+    /* アイコンのスタイル */
+    margin-right: 8px;
+    font-size: 1.2em; /* 例 */
+}
+
 #genrePage{
 	max-width: 800px;
 	margin: 0 auto;
