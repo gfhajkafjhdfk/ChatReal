@@ -47,7 +47,9 @@ html, body {
    } 
 }
 
-
+.instagram{
+	display: flex;
+}
 
 
     #termsPage {
