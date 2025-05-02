@@ -53,18 +53,20 @@ html, body {
     align-items: center;
 }
 
-.instagram-link {
-    display: inline-block;
-}
-
 .instagram-image {
     width: 30%;
     height: auto;
+    display: block;
+}
+
+.instagram a {
+    display: inline-block;
 }
 
 .instagram-text {
     font-size: 100%;
 }
+
 
 
 
