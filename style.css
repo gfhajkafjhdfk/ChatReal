@@ -537,13 +537,15 @@ button:disabled {
 }
 
 #genreForm label {
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
-    padding: 8px 12px;
+    display: block; /* ブロック要素にして縦に並べる */
+    padding: 12px 15px; /* パディングを調整して見やすく */
+    margin-bottom: 8px; /* 各項目の間隔 */
     border-radius: 5px;
-    border: 1px solid #ddd;
-    box-shadow: 1px 1px 3px rgba(0,0,0,0.05);
+    background-color: #f9f9f9; /* 薄い背景色 */
+    border-left: 5px solid transparent; /* 選択時の強調用、初期は透明 */
+    transition: border-left-color 0.3s, background-color 0.3s; /* アニメーション効果 */
+    font-size: 16px; /* テキストサイズを少し大きく */
+    color: #333; /* テキストの色 */
 }
 
 #genreForm input[type="checkbox"] {
@@ -558,6 +560,7 @@ button:disabled {
     justify-content: center;
     align-items: center;
     margin-right: 10px;
+	 vertical-align: middle;
 }
 
 #genreForm input[type="checkbox"]:checked::before {
@@ -572,15 +575,19 @@ button:disabled {
     font-size: 1.2em; /* 例 */
 }
 
-#genrePage{
-	max-width: 800px;
-	margin: 0 auto;
-	padding: 20px;
-	backgroud: #f7f7f7;
-	font-size: 14px;
-	line-height: 1.8;
-	overflow: visible;
-	height: auto;
+#genrePage {
+    max-width: 600px; /* 幅を調整 */
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff; /* 背景色を設定 */
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#genreForm label.selected {
+    border-left-color: #007bff; /* 選択時の左ボーダーの色 */
+    background-color: #e9f7ff; /* 選択時の背景色 */
+    font-weight: bold; /* 選択時のテキストを少し太く */
 }
 
 #genreListPage ul {
