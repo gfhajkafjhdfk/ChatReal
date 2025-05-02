@@ -35,6 +35,20 @@
   </div>
   
 <script>//ジャンル選択をキャプチャし、ジャンルリストページに移動する（ログイン用）
+document.addEventListener('DOMContentLoaded', function() {
+    const genreForm = document.getElementById('genreForm');
+    const genreLabels = document.querySelectorAll('#genreForm label');
+    const genreCheckboxes = document.querySelectorAll('input[name="genre"]');
+
+    genreCheckboxes.forEach((checkbox, index) => {
+        checkbox.addEventListener('change', function() {
+            if (this.checked) {
+                genreLabels[index].classList.add('selected');
+            } else {
+                genreLabels[index].classList.remove('selected');
+            }
+        });
+    });
         document.getElementById('genreForm').addEventListener('submit', function(e) {
             e.preventDefault();
              const selectedGenres = [];//ここから
