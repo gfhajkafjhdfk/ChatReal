@@ -916,6 +916,10 @@ button {
   height: auto;
 }
 
+.restart a{
+	display: block;
+}
+
 
 .backnumber{
 	display: inline-block;
