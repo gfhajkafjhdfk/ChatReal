@@ -452,7 +452,7 @@ h1 {  color: #CC66FF;
     webkit-text-stroke: 1px #CC00FF; 
     /* position: absolute; ← これ削除！ */ 
     margin: 40px 0;
-    ｝
+   }
 
 h2{
 	font-size: 24px;
