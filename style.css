@@ -844,53 +844,7 @@ display: flex;
     position: relative;
     margin: 0 auto;
 }
-/*追加追加追加追加追加追加追加追加追加追加追加追加追加追加追加追加追加追加追加追加追加 ここから */
-.card-container {
-  display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
-  padding: 20px;
-}
 
-.card {
-  position: relative;
-  width: 180px;
-  height: 120px;
-  border-radius: 12px;
-  overflow: hidden;
-  text-decoration: none;
-  color: white;
-  font-family: sans-serif;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-.card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
-
-.card img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  filter: brightness(70%);
-}
-
-.card .label {
-  position: absolute;
-  bottom: 12px;
-  left: 12px;
-  font-size: clamp(14px, 2.5vw, 18px);
-  font-weight: bold;
-}
-
-.card-description {
-  font-size: 14px;
-  margin-top: 8px;
-  color: #555;
-}
-/*追加追加追加追加追加追加追加追加追加追加追加追加追加追加追加追加追加追加追加追加追加ここまで  */
 .map-container iframe {
     position: absolute;
     top: 0;
