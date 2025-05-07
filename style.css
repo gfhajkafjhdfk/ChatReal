@@ -836,7 +836,6 @@ display: flex;
 #backButton:hover {
     background-color: #0056b3;
 }
-
 .map-container {
     width: 100%;
     max-width: 600px;
@@ -845,7 +844,7 @@ display: flex;
     position: relative;
     margin: 0 auto;
 }
-
+/*追加追加追加追加追加追加追加追加追加追加追加追加追加追加追加追加追加追加追加追加追加 ここから */
 .card-container {
   display: flex;
   gap: 20px;
@@ -891,7 +890,7 @@ display: flex;
   margin-top: 8px;
   color: #555;
 }
-
+/*追加追加追加追加追加追加追加追加追加追加追加追加追加追加追加追加追加追加追加追加追加ここまで  */
 .map-container iframe {
     position: absolute;
     top: 0;
