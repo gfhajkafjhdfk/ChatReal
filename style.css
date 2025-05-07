@@ -55,7 +55,7 @@ html, body {
 }
 
 .instagram-image {
-  width: 40px; /* お好みでサイズ調整 */
+  width: 40%; /* お好みでサイズ調整 */
   height: auto;
 }
 
