@@ -448,15 +448,6 @@ white-space: nowrap;
 }
 
 
-h1 {
-    color: #CC66FF;
-    text-align: center;
-    font-size: 100px;
-    -webkit-text-stroke: 1px #CC00FF;
-    /* position: absolute; ← これ削除！ */
-    margin: 40px 0;
-}
-
 h2{
 	font-size: 24px;
 	text-align:center;
