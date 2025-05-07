@@ -72,7 +72,7 @@ html, body {
 
 .instagram a {
   text-decoration: none;
-  font-size: clamp(14px, 2.5vw, 18px);
+  font-size: clamp(18px, 3.5vw, 100px);
   font-weight: 500;
   color: #333;
   font-family: "Helvetica Neue", sans-serif;
