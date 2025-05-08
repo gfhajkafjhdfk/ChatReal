@@ -68,18 +68,21 @@
             quicktrendPage.style.display = 'block';
         });//（ログイン用ここまで）
 //titleについてのアニメーション
-document.addEventListener('DOMContentLoaded', function() {
-  const titleElement = document.querySelector('.title');
-  const text = titleElement.textContent;
-  titleElement.textContent = ''; // 元のテキストをクリア
+window.onload = function() {
+  const titleElements = document.querySelectorAll('.title'); // 複数の要素に対応
 
-  for (let i = 0; i < text.length; i++) {
-    const span = document.createElement('span');
-    span.textContent = text[i];
-    span.style.animation = `fadeInUpChar 0.5s ease-out ${i * 0.1}s forwards`; // アニメーションと遅延
-    titleElement.appendChild(span);
-  }
-});
+  titleElements.forEach(titleElement => {
+    const text = titleElement.textContent;
+    titleElement.textContent = ''; // 元のテキストをクリア
+
+    for (let i = 0; i < text.length; i++) {
+      const span = document.createElement('span');
+      span.textContent = text[i];
+      span.style.animation = `fadeInUpChar 0.5s ease-out ${i * 0.1}s forwards`; // アニメーションと遅延
+      titleElement.appendChild(span);
+    }
+  });
+};
 </script>
 </body>
   </html>
