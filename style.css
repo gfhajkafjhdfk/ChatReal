@@ -907,10 +907,20 @@ button {
 }
 
 #quicktrendPage {
-  position: relative;
-  width: 100%; 
+  position: relative; /* 子要素のabsolute配置の基準 */
+  width: 100%;
   height: auto;
+  padding: 20px; /* 全体的な余白を追加 */
+  box-sizing: border-box; /* paddingを含めてwidth/heightを計算 */
 }
+
+.restart {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 10; /* 他の要素より前面に表示 */
+}
+
 
 .restart a{
 	display: block;
@@ -938,6 +948,53 @@ button {
 	background-color: #e0e0e0;
 	color: #111;
 	transform: translateY(-2px);
+}
+
+.main-container {
+  display: flex; /* 横並びにする */
+  justify-content: space-around; /* 要素間に均等なスペース */
+  align-items: flex-start; /* 上端を揃える */
+  margin-top: 40px; /* restartボタンとのスペースを確保 */
+}
+
+.item-container {
+  width: 45%; /* 左右のコンテナの幅（調整可能） */
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden; /* ホバー時の拡大が枠外に出るのを防ぐ */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.image-link {
+  display: block; /* 画像コンテナ全体をリンク可能に */
+  text-decoration: none; /* リンクの下線を非表示 */
+}
+
+.image-container {
+  height: 200px; /* 画像の高さの目安（調整可能） */
+  overflow: hidden; /* 画像が指定高さを超えたら隠す */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f9f9f9; /* 画像がない場合の背景色 */
+  transition: transform 0.3s ease-in-out; /* 拡大アニメーション */
+}
+
+.item-container:hover .image-container {
+  transform: scale(1.05); /* ホバー時に少し拡大 */
+}
+
+.image-container img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain; /* 画像がコンテナに収まるように */
+}
+
+.description {
+  padding: 15px;
+  text-align: center;
+  font-size: 14px;
+  color: #555;
 }
 
 .back-button {
