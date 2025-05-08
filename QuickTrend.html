@@ -78,7 +78,7 @@ window.onload = function() {
     for (let i = 0; i < text.length; i++) {
       const span = document.createElement('span');
       span.textContent = text[i];
-      span.style.animation = `fadeInUpChar 0.5s ease-out ${i * 0.1}s forwards`; // アニメーションと遅延
+      span.style.animation = `fadeInUpChar 1.0s ease-out ${i * 0.1}s forwards`; // アニメーションと遅延
       titleElement.appendChild(span);
     }
   });
