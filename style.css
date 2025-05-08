@@ -918,6 +918,23 @@ button {
 	font-family: "Book Antiqua";
 	text-align: center;
 	font-size: 25px;
+	position: relative; 
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.title span {
+  display: inline-block; /* 横に並べる */
+  opacity: 0; /* 最初は透明 */
+  transform: translateY(100%); /* 下に隠す */
+}
+
+/* アニメーションのキーフレーム */
+@keyframes fadeInUpChar {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 
