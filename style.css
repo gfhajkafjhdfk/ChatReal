@@ -1020,6 +1020,11 @@ button {
   color: #555;
 }
 
+.clicktap {
+	text-size: 50px;
+}
+
+
 .back-button {
   background-color: #6c757d;
   color: white;
