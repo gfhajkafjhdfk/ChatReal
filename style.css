@@ -1055,18 +1055,6 @@ button {
 }
 
 
-
-
-.back-button {
-  background-color: #6c757d;
-  color: white;
-  margin-bottom: 15px;
-}
-
-.back-button:hover {
-  background-color: #5a6268;
-}
-
 .submit-button {
   background-color: #007BFF;
   color: white;
