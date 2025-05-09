@@ -1170,7 +1170,7 @@ button {
   left: 0;
   width: 100%;
   height: 100%;
-background-image: url('flower-background2.jpg'); /* 背景画像のパス */ 
+background-image: url('backimage.jpg'); /* 背景画像のパス */ 
   background-size: cover; /* 画像を要素にフィット */
   background-repeat: no-repeat; /* 繰り返しなし */
   background-position: center; /* 中央揃え */
