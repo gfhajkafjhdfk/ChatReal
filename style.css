@@ -817,7 +817,7 @@ display: flex;
 
 
 #backButton {
-  background: rgba(255, 255, 255, 0.15); /* 半透明のガラス風 */
+  background: rgba(0, 0, 255, 0.5); /* 半透明のガラス風 */
   backdrop-filter: blur(10px);          /* ガラスっぽいぼかし */
   -webkit-backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.2);
