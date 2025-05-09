@@ -129,7 +129,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 const genre = this.dataset.genre;
                 postTitle.textContent = `${genre} の投稿`;
                 genreListPage.style.display = 'none';
-                controlebar.style.display = 'none';//追加
+                controlebar.style.display = 'block';//追加
                 postPage.style.display = 'block';
                 loadPosts(genre);  // 選択したジャンルの投稿を localStorage から読み込む
             });
