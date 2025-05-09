@@ -36,14 +36,14 @@ html, body {
 	/* タブレット */
 	 .imageone{
        width:100%;
-	heigut:400px;
+	height:400px;
    } 
 }
 @media screen and (min-width: 1024px) {
 	/* PC */
 	 .imageone{
        width:100%;
-	heigut:600px;
+	height:600px;
 　　　　object-fit: cover;
    } 
 }
