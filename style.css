@@ -1027,29 +1027,39 @@ button {
   color: #555;
 }
 
-/* トップページへ戻るボタンのスタイル */
+/* トップページに戻るボタンのスタイル */
 .toppage {
-  display: inline-block; /* インラインブロック要素にする */
-  padding: 10px 20px; /* 内側の余白 */
-  background-color: #4CAF50; /* 背景色 */
-  color: white; /* 文字色 */
-  text-decoration: none; /* 下線をなくす */
-  border-radius: 5px; /* 角を丸くする */
-  font-size: 16px; /* 文字サイズ */
-  /* 必要に応じて他のスタイルを追加 */
+  display: inline-block;
+  padding: 10px 20px; 
+  background-color: #4CAF50;
+  color: white;
+  text-decoration: none; 
+  border-radius: 5px; 
+  font-size: 16px; 
+ 
 }
 
-/* 前のページへ戻るボタンのスタイル */
+.toppage:hover {
+  background-color: #367c39;
+  cursor: pointer;
+}
+
+/* 前のページに戻るボタンのスタイル */
 .backpage {
-  display: inline-block; /* インラインブロック要素にする */
-  padding: 10px 20px; /* 内側の余白 */
-  background-color: #007bff; /* 背景色 */
-  color: white; /* 文字色 */
-  text-decoration: none; /* 下線をなくす */
-  border-radius: 5px; /* 角を丸くする */
-  font-size: 16px; /* 文字サイズ */
-  margin-left: 10px; /* 左側の余白で間隔を調整 */
-  /* 必要に応じて他のスタイルを追加 */
+  display: inline-block; 
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 16px;
+  margin-left: 10px; 
+
+}
+
+.backpage:hover {
+  background-color: #0056b3;
+  cursor: pointer; 
 }
 
 @media screen and (min-width: 375px) {
