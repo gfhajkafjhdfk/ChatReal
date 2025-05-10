@@ -1,16 +1,30 @@
 window.addEventListener('DOMContentLoaded', () => {
-  // ローディング → 利用規約ページ
+  // --- 初期画面の読み込み遅延処理 ---
   setTimeout(() => {
-    const loadingScreen = document.getElementById('loading-screen');
-    const termsPage = document.getElementById('termsPage');
-    if (loadingScreen && termsPage) {
-      loadingScreen.style.display = 'none';
-      termsPage.style.display = 'block';
-    }
+    document.getElementById('loading-screen').style.display = 'none';
+    document.getElementById('termsPage').style.display = 'block';
   }, 3000);
 
-  // タイトル文字アニメーション
-  document.querySelectorAll('.title').forEach(titleElement => {
+  // --- 要素取得 ---
+  const agreeCheckbox = document.getElementById('agreeCheckbox');
+  const agreeButton = document.getElementById('agreeButton');
+  const firstPage = document.getElementById('firstPage');
+  const registrationPage = document.getElementById('registrationPage');
+  const termsPage = document.getElementById('termsPage');
+  const genrePage = document.getElementById('genrePage');
+  const genreListPage = document.getElementById('genreListPage');
+  const postPage = document.getElementById('postPage');
+  const controlebar = document.getElementById('controlebar');
+  const postTitle = document.getElementById('postTitle');
+  const postForm = document.getElementById('postForm');
+  const postContent = document.getElementById('postContent');
+  const postList = document.getElementById('postList');
+  const loginForm = document.getElementById('loginform');
+  const registrationForm = document.getElementById('registrationForm');
+
+  // --- アニメーション（タイトル） ---
+  const titleElements = document.querySelectorAll('.title');
+  titleElements.forEach(titleElement => {
     const text = titleElement.textContent;
     titleElement.textContent = '';
     for (let i = 0; i < text.length; i++) {
@@ -21,143 +35,146 @@ window.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // 利用規約同意チェック
-  const agreeCheckbox = document.getElementById('agreeCheckbox');
-  const agreeButton = document.getElementById('agreeButton');
-  const termsPage = document.getElementById('termsPage');
-  const registrationPage = document.getElementById('registrationPage');
-
-  if (agreeCheckbox && agreeButton) {
-    agreeCheckbox.addEventListener('change', () => {
-      agreeButton.disabled = !agreeCheckbox.checked;
-    });
-
-    agreeButton.addEventListener('click', () => {
-      if (termsPage && registrationPage) {
-        termsPage.style.display = 'none';
-        registrationPage.style.display = 'block';
+  // --- アニメーション（スクロールでフェードイン） ---
+  const featureItems = document.querySelectorAll('.feature-item');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('fade-in');
       }
     });
-  }
+  }, { threshold: 0.1 });
+  featureItems.forEach(item => observer.observe(item));
 
-  // 新規登録処理
-  const registrationForm = document.getElementById('registrationForm');
-  if (registrationForm) {
-    registrationForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const name = document.getElementById('name')?.value;
-      const age = document.getElementById('age')?.value;
-      const phone = document.getElementById('phone')?.value;
-      const email = document.getElementById('email')?.value;
-      const password = document.getElementById('password')?.value;
+  // --- 利用規約同意チェック ---
+  agreeCheckbox?.addEventListener('change', () => {
+    agreeButton.disabled = !agreeCheckbox.checked;
+  });
 
-      if (name && age && phone && email && password) {
-        const userData = { name, age, phone, email, password };
-        localStorage.setItem('userData', JSON.stringify(userData));
-        window.location.replace('QuickTrend.html');
-      } else {
-        alert('すべての項目を入力してください');
-      }
-    });
-  }
+  agreeButton?.addEventListener('click', () => {
+    firstPage.style.display = 'none';
+    registrationPage.style.display = 'block';
+  });
 
-  // ログイン処理
-  const loginForm = document.getElementById('loginform');
+  // --- 新規登録 ---
+  registrationForm?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const userData = {
+      name: document.getElementById('name')?.value || '',
+      age: document.getElementById('age')?.value || '',
+      phone: document.getElementById('phone')?.value || '',
+      email: document.getElementById('email')?.value || '',
+      password: document.getElementById('password')?.value || ''
+    };
+    localStorage.setItem('userData', JSON.stringify(userData));
+    window.location.replace('QuickTrend.html');
+  });
+
+  // --- ログイン処理 ---
   if (loginForm) {
-    loginForm.addEventListener('submit', (e) => {
+    loginForm.addEventListener('submit', function (e) {
       e.preventDefault();
-      const loginEmail = document.getElementById('loginemail')?.value;
+      const loginEmail = document.getElementById('loginemail')?.value.trim();
       const loginPassword = document.getElementById('loginpassword')?.value;
-      const storedUser = JSON.parse(localStorage.getItem('userData'));
+      const storedUserData = JSON.parse(localStorage.getItem('userData'));
 
-      if (!storedUser) {
-        alert('登録されたユーザーが見つかりません。');
+      if (!storedUserData) {
+        alert('登録されたユーザーが見つかりません。新規登録を行ってください。');
         return;
       }
 
-      if (storedUser.email === loginEmail && storedUser.password === loginPassword) {
+      const { email, password } = storedUserData;
+      if (loginEmail === email && loginPassword === password) {
         window.location.replace('QuickTrend.html');
       } else {
-        alert('メールアドレスまたはパスワードが違います');
+        alert('メールアドレスまたはパスワードが間違っています。');
       }
     });
   }
 
-  // 投稿機能（QuickTrend.html内）
-  const postForm = document.getElementById('postForm');
-  const postList = document.getElementById('postList');
-
-  // 投稿読み込み
-  function loadPosts() {
-    const posts = JSON.parse(localStorage.getItem('posts')) || [];
-    postList.innerHTML = '';
-    posts.forEach((post, index) => {
-      const postItem = document.createElement('div');
-      postItem.className = 'post-item';
-
-      const textEl = document.createElement('p');
-      textEl.textContent = post.text;
-      postItem.appendChild(textEl);
-
-      if (post.image) {
-        const imgEl = document.createElement('img');
-        imgEl.src = post.image;
-        imgEl.style.maxWidth = '200px';
-        postItem.appendChild(imgEl);
-      }
-
-      const deleteBtn = document.createElement('button');
-      deleteBtn.textContent = '削除';
-      deleteBtn.addEventListener('click', () => {
-        posts.splice(index, 1);
-        localStorage.setItem('posts', JSON.stringify(posts));
-        loadPosts();
-      });
-      postItem.appendChild(deleteBtn);
-
-      postList.appendChild(postItem);
+  // --- ジャンル選択後の遷移 ---
+  document.getElementById('genreForm')?.addEventListener('submit', function (e) {
+    e.preventDefault();
+    const selectedGenres = [];
+    document.querySelectorAll('input[name="genre"]:checked').forEach(genre => {
+      selectedGenres.push(genre.value);
     });
-  }
+    console.log('Selected Genres:', selectedGenres);
+    genrePage.style.display = 'none';
+    document.getElementById('quicktrendPage').style.display = 'block';
+  });
 
-  // 投稿処理
-  if (postForm) {
-    postForm.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      const textInput = document.getElementById('postText');
-      const imageInput = document.getElementById('postImage');
-      const text = textInput?.value;
-      const imageFile = imageInput?.files[0];
-
-      if (!text && !imageFile) {
-        alert('投稿内容が空です');
-        return;
-      }
-
-      let imageBase64 = '';
-      if (imageFile) {
-        imageBase64 = await toBase64(imageFile);
-      }
-
-      const newPost = { text, image: imageBase64 };
-      const posts = JSON.parse(localStorage.getItem('posts')) || [];
-      posts.unshift(newPost);
-      localStorage.setItem('posts', JSON.stringify(posts));
-      loadPosts();
-
-      // フォームリセット
-      textInput.value = '';
-      imageInput.value = '';
+  // --- ジャンルボタンをクリックで投稿画面へ ---
+  document.querySelectorAll('.genreButton').forEach(button => {
+    button.addEventListener('click', function () {
+      const genre = this.dataset.genre;
+      postTitle.textContent = `${genre} の投稿`;
+      genreListPage.style.display = 'none';
+      controlebar.style.display = 'none';
+      postPage.style.display = 'block';
+      loadPosts(genre);
     });
-    loadPosts();
-  }
+  });
 
-  // 画像をBase64へ変換
-  function toBase64(file) {
-    return new Promise((resolve, reject) => {
+  // --- 戻るボタンで投稿一覧に戻る ---
+  document.getElementById('backButton')?.addEventListener('click', () => {
+    postPage.style.display = 'none';
+    genreListPage.style.display = 'block';
+    controlebar.style.display = 'block';
+  });
+
+  // --- 投稿処理 ---
+  postForm?.addEventListener('submit', function (e) {
+    e.preventDefault();
+    const username = document.getElementById('username').value;
+    const content = postContent.value;
+    const genre = postTitle.textContent.split(' ')[0];
+    const timestamp = new Date().toLocaleString();
+    const file = document.getElementById('filebox')?.files[0];
+
+    const handlePost = (media) => {
+      const post = { username, content, media, timestamp };
+      const posts = JSON.parse(localStorage.getItem(genre)) || [];
+      posts.push(post);
+      localStorage.setItem(genre, JSON.stringify(posts));
+      displayPost(post);
+      postForm.reset();
+    };
+
+    if (file) {
       const reader = new FileReader();
-      reader.onload = e => resolve(e.target.result);
-      reader.onerror = e => reject(e);
+      reader.onload = e => handlePost(e.target.result);
       reader.readAsDataURL(file);
-    });
+    } else {
+      handlePost(null);
+    }
+  });
+
+  // --- 投稿読み込み ---
+  function loadPosts(genre) {
+    postList.innerHTML = '';
+    const posts = JSON.parse(localStorage.getItem(genre)) || [];
+    posts.forEach(post => displayPost(post));
+  }
+
+  // --- 投稿表示 ---
+  function displayPost(post) {
+    const li = document.createElement('li');
+    li.innerHTML = `<strong>${post.username}</strong> (${post.timestamp})<br>${post.content}`;
+
+    if (post.media) {
+      const isImage = post.media.startsWith('data:image/');
+      const mediaElement = document.createElement(isImage ? 'img' : 'video');
+      mediaElement.src = post.media;
+      if (isImage) {
+        mediaElement.style.maxWidth = '200px';
+      } else {
+        mediaElement.controls = true;
+      }
+      li.appendChild(mediaElement);
+    }
+
+    postList.appendChild(li);
   }
 });
+
