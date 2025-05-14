@@ -655,8 +655,7 @@ button:disabled {
 }
 
 #genreForm label {
-    position: relative; /* 子要素のabsolute配置の基準 */
-    display: flex;
+    /* 既存のスタイルはそのまま */
     align-items: center;
     margin-bottom: 10px;
     padding: 12px 16px;
@@ -666,7 +665,11 @@ button:disabled {
     box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.05);
     cursor: pointer;
     transition: background-color 0.3s;
-    justify-content: space-between; /* チェックボックスと「?」を左右に配置 */
+
+    /* スライドインアニメーションのための初期設定 */
+    transform: translateX(100%); /* 右側に完全に隠す */
+    opacity: 0; /* 初期透明度を0に */
+    animation: slideIn 0.5s ease-out forwards; /* アニメーションを適用 */
 }
 
 #genreForm label > div.tooltip {
