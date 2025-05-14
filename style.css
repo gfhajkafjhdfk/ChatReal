@@ -621,38 +621,8 @@ button:disabled {
   cursor: pointer;
 }
 
-.question-mark {
-    position: absolute; /* label内での位置調整 */
-    top: 0.2em;
-    right: 0.5em;
-    font-size: 0.8em;
-    cursor: pointer;
-    border: 1px solid #ccc;
-    border-radius: 50%;
-    width: 16px;
-    height: 16px;
-    text-align: center;
-    line-height: 16px;
-    display: inline-block;
-    margin-left: auto; /* 右端に寄せる */
-    background-color: #fff;
-}
 
-.tooltip {
-    display: none;
-    position: absolute;
-    top: 1.5em;
-    right: 0;
-    background-color: #f9f9f9;
-    color: #333;
-    border: 1px solid #ccc;
-    padding: 0.5em;
-    border-radius: 5px;
-    z-index: 10;
-    white-space: nowrap;
-    font-size: 0.9em;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
-}
+
 
 #genreForm label {
     /* 既存のスタイルはそのまま */
@@ -672,17 +642,17 @@ button:disabled {
     animation: slideIn 0.5s ease-out forwards; /* アニメーションを適用 */
 }
 
-#genreForm label > div.tooltip {
-    top: auto;
-    bottom: 2.5em;
-    right: 0;
+
+.tooltip {
+  display: none;
+  background: #fff;
+  border: 1px solid #888;
+  padding: 8px;
+  margin-top: 5px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  font-size: 14px;
 }
-
-#genreForm label > input[type="checkbox"] {
-    margin-right: 8px;
-}
-
-
 
 /* スライドインアニメーションの定義 */
 @keyframes slideIn {
