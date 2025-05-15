@@ -609,21 +609,6 @@ button:disabled {
     animation-delay: 1.3s;
 }
 
-.info-btn {
-  margin-left: 8px;
-  background-color: #ccc;
-  border: none;
-  border-radius: 50%;
-  width: 20px;
-  height: 20px;
-  font-size: 14px;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-
-
-
 #genreForm label {
     /* 既存のスタイルはそのまま */
     align-items: center;
@@ -640,18 +625,6 @@ button:disabled {
     transform: translateX(100%); /* 右側に完全に隠す */
     opacity: 0; /* 初期透明度を0に */
     animation: slideIn 0.5s ease-out forwards; /* アニメーションを適用 */
-}
-
-
-.tooltip {
-  display: none;
-  background: #fff;
-  border: 1px solid #888;
-  padding: 8px;
-  margin-top: 5px;
-  border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  font-size: 14px;
 }
 
 /* スライドインアニメーションの定義 */
