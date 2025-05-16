@@ -1120,7 +1120,26 @@ button {
 
 .clicktap span {
     cursor: pointer;
+     animation: subtle-blink 2s infinite;
 }
+
+.clicktap span:hover {
+    text-decoration: underline;
+    color: #007bff;
+    animation: none; /* ホバー時は点滅を停止 */
+}
+
+.clicktap span:active {
+    color: #0056b3;
+}
+
+
+@keyframes subtle-blink {
+    0% { opacity: 1; }
+    50% { opacity: 0.7; }
+    100% { opacity: 1; }
+}
+
 
 .supplement {
 	text-align: center;
