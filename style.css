@@ -1124,9 +1124,6 @@ button {
 }
 
 
-.clicktap span:active {
-    color: #0056b3;
-}
 
 
 @keyframes subtle-blink {
