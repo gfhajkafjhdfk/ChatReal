@@ -816,6 +816,26 @@ display: flex;
     margin: 5px 0;
  }   
 
+.click-animation {
+    animation: shake 0.5s ease-in-out infinite alternate;
+}
+
+.tap-animation {
+    animation: tapEffect 0.3s ease-out forwards;
+}
+
+@keyframes shake {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(5px); }
+}
+
+@keyframes tapEffect {
+    0% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(0.9); opacity: 0.8; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+
 
 #backButton {
   background: rgba(0, 0, 255, 0.5); /* 半透明のガラス風 */
