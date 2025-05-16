@@ -98,15 +98,12 @@ document.addEventListener('DOMContentLoaded', function() {
     const tapText = document.getElementById('tapText');
 
     // 「クリック」テキストのアニメーション
-    clickText.addEventListener('mouseover', function() {
-        this.classList.add('click-animation');
-    });
-
-    clickText.addEventListener('mouseout', function() {
-        this.classList.remove('click-animation');
-    });
-
     clickText.addEventListener('mousedown', function() {
+        this.classList.add('tap-animation');
+        // アニメーション終了後にクラスを削除
+        this.addEventListener('animationend', function() {
+            this.classList.remove('tap-animation');
+        }, { once: true });
         // ここに「クリック」された際の実際のアクションを追加できます
         console.log('「クリック」されました！');
     });
@@ -122,6 +119,10 @@ document.addEventListener('DOMContentLoaded', function() {
         // ここに「タップ」された際の実際のアクションを追加できます
         console.log('「タップ」されました！');
     });
+
+    // マウスオーバー時のアニメーションを削除
+    clickText.addEventListener('mouseover', function() {});
+    clickText.addEventListener('mouseout', function() {});
 });
 
   
