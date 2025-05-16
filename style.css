@@ -1118,6 +1118,10 @@ button {
 }
 }
 
+.clicktap span {
+    cursor: pointer;
+}
+
 .supplement {
 	text-align: center;
 }
