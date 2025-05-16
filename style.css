@@ -1123,11 +1123,6 @@ button {
      animation: subtle-blink 2s infinite;
 }
 
-.clicktap span:hover {
-    text-decoration: underline;
-    color: #007bff;
-    animation: none; /* ホバー時は点滅を停止 */
-}
 
 .clicktap span:active {
     color: #0056b3;
