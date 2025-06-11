@@ -106,7 +106,7 @@
     </div>
   </div>
 </div>
-  <script>
+  <script>//login情報がない場合はログイン画面に自動的に戻るコードを作る必要がある！・・・・・・・・・・・・・・・
 document.addEventListener('DOMContentLoaded', function() {
         const agreeCheckbox = document.getElementById('agreeCheckbox');
         const agreeButton = document.getElementById('agreeButton');
@@ -158,7 +158,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     const base64Data = e.target.result;
                     const post = { username, content, media: base64Data, timestamp };
 
-                    // ローカルストレージに保存
+                    // ローカルストレージに保存 localStoregeをサーバの情報に変更（データベースサーバ？）-----------------------------------
                     let posts = JSON.parse(localStorage.getItem(genre)) || [];
                     posts.push(post);
                     localStorage.setItem(genre, JSON.stringify(posts));
@@ -183,7 +183,7 @@ document.addEventListener('DOMContentLoaded', function() {
             postList.innerHTML = '';
             const posts = JSON.parse(localStorage.getItem(genre)) || [];
             posts.forEach(post => displayPost(post));
-        }
+        }//localStoregeをサーバへ変更はここまで---------------------------------------------------------------------------------------（推測だがユーザデータなどを保存しているid名もサーバに入れる必要があるかも）
 
         // 投稿を表示する
         function displayPost(post) {
