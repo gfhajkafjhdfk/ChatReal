@@ -177,7 +177,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const email = document.getElementById('email')?.value || '';
     const password = document.getElementById('password')?.value || '';
 
-    // ユーザーデータをローカルストレージに保存
+    // ユーザーデータをローカルストレージに保存 localStorageをサーバの情報に変更(データベースサーバ？)
     const userData = { name, age, phone, email, password };
     localStorage.setItem('userData', JSON.stringify(userData));
     console.log('User Data saved:', userData);
