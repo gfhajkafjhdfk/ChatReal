@@ -43,8 +43,8 @@
       const loginEmail = emailInput.value.trim();
       const loginPassword = passwordInput.value;
 
-      // ローカルストレージからユーザーデータを取得
-      const storedUserData = JSON.parse(localStorage.getItem('userData'));
+      // ローカルストレージからユーザーデータを取得 localStoregeをサーバの情報に変更(データベースサーバ？)
+       const storedUserData = JSON.parse(localStorage.getItem('userData'));
 
       if (!storedUserData) {
         alert('登録されたユーザーが見つかりません。新規登録を行ってください。');
